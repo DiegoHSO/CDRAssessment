@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  CDRAssessment
+
+  Created by Diego Henrique Silva Oliveira on 04/01/23.
+  
+*/
+
+"title" = "Escala Clinical Dementia Rating";
+"subtitle" = "Avaliação através da escala\nClinical Dementia Rating (CDR)";
+"start" = "Começar";
+"next" = "Próximo";

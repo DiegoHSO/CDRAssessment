@@ -7,23 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F14EB0642965F4720045E6AB /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14EB0632965F4720045E6AB /* QuizViewController.xib */; };
 		F17ACE252965F26C0028E2CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE242965F26C0028E2CD /* AppDelegate.swift */; };
 		F17ACE272965F26C0028E2CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE262965F26C0028E2CD /* SceneDelegate.swift */; };
-		F17ACE292965F26C0028E2CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE282965F26C0028E2CD /* ViewController.swift */; };
-		F17ACE2C2965F26C0028E2CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2A2965F26C0028E2CD /* Main.storyboard */; };
+		F17ACE292965F26C0028E2CD /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE282965F26C0028E2CD /* MainMenuViewController.swift */; };
+		F17ACE2C2965F26C0028E2CD /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2A2965F26C0028E2CD /* MainMenu.storyboard */; };
 		F17ACE2E2965F26E0028E2CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2D2965F26E0028E2CD /* Assets.xcassets */; };
 		F17ACE312965F26E0028E2CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2F2965F26E0028E2CD /* LaunchScreen.storyboard */; };
+		F1BDA62E2965F4A800972E7B /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */; };
+		F1BDA6352965F5B700972E7B /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6342965F5B700972E7B /* QuizViewModel.swift */; };
+		F1BDA6382965F5E300972E7B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6372965F5E300972E7B /* Category.swift */; };
+		F1BDA63A2965F7D100972E7B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6392965F7D100972E7B /* State.swift */; };
+		F1BDA64C2965FCCF00972E7B /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = F1BDA64E2965FCCF00972E7B /* data.json */; };
+		F1BDA6522966170E00972E7B /* MainMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6512966170E00972E7B /* MainMenuCoordinator.swift */; };
+		F1BDA6542966175500972E7B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6532966175500972E7B /* Coordinator.swift */; };
+		F1BDA658296617C100972E7B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA657296617C100972E7B /* Storyboarded.swift */; };
+		F1BDA65B2966196600972E7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1BDA65D2966196600972E7B /* Localizable.strings */; };
+		F1BDA661296620F400972E7B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA660296620F400972E7B /* QuizViewController.swift */; };
+		F1BDA6632966236000972E7B /* QuizCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6622966236000972E7B /* QuizCoordinator.swift */; };
+		F1BDA6652966292700972E7B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6642966292700972E7B /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F14EB0632965F4720045E6AB /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		F17ACE212965F26C0028E2CD /* CDRAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDRAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17ACE242965F26C0028E2CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17ACE262965F26C0028E2CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F17ACE282965F26C0028E2CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F17ACE2B2965F26C0028E2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F17ACE282965F26C0028E2CD /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		F17ACE2B2965F26C0028E2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainMenu.storyboard; sourceTree = "<group>"; };
 		F17ACE2D2965F26E0028E2CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F17ACE302965F26E0028E2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F17ACE322965F26E0028E2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
+		F1BDA6342965F5B700972E7B /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		F1BDA6372965F5E300972E7B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F1BDA6392965F7D100972E7B /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		F1BDA64D2965FCCF00972E7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/data.json; sourceTree = "<group>"; };
+		F1BDA64F2965FCF700972E7B /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/data.json"; sourceTree = "<group>"; };
+		F1BDA6512966170E00972E7B /* MainMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCoordinator.swift; sourceTree = "<group>"; };
+		F1BDA6532966175500972E7B /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F1BDA657296617C100972E7B /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		F1BDA65C2966196600972E7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F1BDA65E2966196900972E7B /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F1BDA660296620F400972E7B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		F1BDA6622966236000972E7B /* QuizCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCoordinator.swift; sourceTree = "<group>"; };
+		F1BDA6642966292700972E7B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +84,108 @@
 		F17ACE232965F26C0028E2CD /* CDRAssessment */ = {
 			isa = PBXGroup;
 			children = (
-				F17ACE242965F26C0028E2CD /* AppDelegate.swift */,
-				F17ACE262965F26C0028E2CD /* SceneDelegate.swift */,
-				F17ACE282965F26C0028E2CD /* ViewController.swift */,
-				F17ACE2A2965F26C0028E2CD /* Main.storyboard */,
-				F17ACE2D2965F26E0028E2CD /* Assets.xcassets */,
-				F17ACE2F2965F26E0028E2CD /* LaunchScreen.storyboard */,
+				F1BDA62F2965F4E100972E7B /* App */,
+				F1BDA6302965F50300972E7B /* Modules */,
+				F1BDA6312965F50900972E7B /* Generics */,
+				F1BDA6322965F52E00972E7B /* Services */,
 				F17ACE322965F26E0028E2CD /* Info.plist */,
 			);
 			path = CDRAssessment;
+			sourceTree = "<group>";
+		};
+		F1BDA62F2965F4E100972E7B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F17ACE242965F26C0028E2CD /* AppDelegate.swift */,
+				F17ACE262965F26C0028E2CD /* SceneDelegate.swift */,
+				F17ACE2F2965F26E0028E2CD /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F1BDA6302965F50300972E7B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDA6502966123D00972E7B /* MainMenu */,
+				F1BDA65F29661B2F00972E7B /* Quiz */,
+				F1BDA666296634F000972E7B /* Results */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F1BDA6312965F50900972E7B /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDA656296617B700972E7B /* Coordinator */,
+				F1BDA6552966177100972E7B /* Resources */,
+				F1BDA6332965F54100972E7B /* Models */,
+				F1BDA65D2966196600972E7B /* Localizable.strings */,
+			);
+			path = Generics;
+			sourceTree = "<group>";
+		};
+		F1BDA6322965F52E00972E7B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F1BDA6332965F54100972E7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDA6372965F5E300972E7B /* Category.swift */,
+				F1BDA6392965F7D100972E7B /* State.swift */,
+				F1BDA6642966292700972E7B /* BaseViewController.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1BDA6502966123D00972E7B /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F17ACE2A2965F26C0028E2CD /* MainMenu.storyboard */,
+				F17ACE282965F26C0028E2CD /* MainMenuViewController.swift */,
+				F1BDA6512966170E00972E7B /* MainMenuCoordinator.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		F1BDA6552966177100972E7B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F17ACE2D2965F26E0028E2CD /* Assets.xcassets */,
+				F1BDA64E2965FCCF00972E7B /* data.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F1BDA656296617B700972E7B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDA6532966175500972E7B /* Coordinator.swift */,
+				F1BDA657296617C100972E7B /* Storyboarded.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F1BDA65F29661B2F00972E7B /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				F14EB0632965F4720045E6AB /* QuizViewController.xib */,
+				F1BDA6342965F5B700972E7B /* QuizViewModel.swift */,
+				F1BDA660296620F400972E7B /* QuizViewController.swift */,
+				F1BDA6622966236000972E7B /* QuizCoordinator.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		F1BDA666296634F000972E7B /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +230,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = F17ACE182965F26C0028E2CD;
 			productRefGroup = F17ACE222965F26C0028E2CD /* Products */;
@@ -126,8 +248,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17ACE312965F26E0028E2CD /* LaunchScreen.storyboard in Resources */,
+				F1BDA64C2965FCCF00972E7B /* data.json in Resources */,
 				F17ACE2E2965F26E0028E2CD /* Assets.xcassets in Resources */,
-				F17ACE2C2965F26C0028E2CD /* Main.storyboard in Resources */,
+				F1BDA65B2966196600972E7B /* Localizable.strings in Resources */,
+				F1BDA62E2965F4A800972E7B /* ResultsViewController.xib in Resources */,
+				F17ACE2C2965F26C0028E2CD /* MainMenu.storyboard in Resources */,
+				F14EB0642965F4720045E6AB /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,21 +264,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17ACE292965F26C0028E2CD /* ViewController.swift in Sources */,
+				F1BDA6542966175500972E7B /* Coordinator.swift in Sources */,
+				F1BDA661296620F400972E7B /* QuizViewController.swift in Sources */,
+				F17ACE292965F26C0028E2CD /* MainMenuViewController.swift in Sources */,
+				F1BDA6382965F5E300972E7B /* Category.swift in Sources */,
+				F1BDA6632966236000972E7B /* QuizCoordinator.swift in Sources */,
+				F1BDA6652966292700972E7B /* BaseViewController.swift in Sources */,
+				F1BDA6522966170E00972E7B /* MainMenuCoordinator.swift in Sources */,
 				F17ACE252965F26C0028E2CD /* AppDelegate.swift in Sources */,
+				F1BDA658296617C100972E7B /* Storyboarded.swift in Sources */,
 				F17ACE272965F26C0028E2CD /* SceneDelegate.swift in Sources */,
+				F1BDA6352965F5B700972E7B /* QuizViewModel.swift in Sources */,
+				F1BDA63A2965F7D100972E7B /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F17ACE2A2965F26C0028E2CD /* Main.storyboard */ = {
+		F17ACE2A2965F26C0028E2CD /* MainMenu.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F17ACE2B2965F26C0028E2CD /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainMenu.storyboard;
 			sourceTree = "<group>";
 		};
 		F17ACE2F2965F26E0028E2CD /* LaunchScreen.storyboard */ = {
@@ -163,6 +298,24 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		F1BDA64E2965FCCF00972E7B /* data.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1BDA64D2965FCCF00972E7B /* en */,
+				F1BDA64F2965FCF700972E7B /* pt-BR */,
+			);
+			name = data.json;
+			sourceTree = "<group>";
+		};
+		F1BDA65D2966196600972E7B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1BDA65C2966196600972E7B /* en */,
+				F1BDA65E2966196900972E7B /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -170,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -230,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -290,11 +445,14 @@
 				DEVELOPMENT_TEAM = TA9GQL43ZA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CDRAssessment/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dementia Rating Scale";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +460,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diego.CDRAssessment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,11 +479,14 @@
 				DEVELOPMENT_TEAM = TA9GQL43ZA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CDRAssessment/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dementia Rating Scale";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +494,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diego.CDRAssessment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

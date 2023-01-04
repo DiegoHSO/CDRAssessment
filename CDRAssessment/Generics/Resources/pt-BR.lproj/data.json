@@ -1,0 +1,67 @@
+{
+    "memory": {
+        "name": "Memória",
+        "numberOfQuestions": 5,
+        "questions": [
+            "Sem perda da memória ou pequenos esquecimentos ocasionais",
+            "Pequenos esquecimentos frequentes, recordação parcial de acontecimentos; esquecimentos não significativos",
+            "Perda moderada da memória, mais acentuada no que se refere a acontecimentos recentes; o problema interfere nas atividades do dia-a-dia",
+            "Grave perda da memória; somente informações bem aprendidas são retidas; novas informações são rapidamente esquecidas",
+            "Perda severa da memória; somente permanecem fragmentos"
+        ]
+    },
+    "orientation": {
+        "name": "Orientação",
+        "numberOfQuestions": 5,
+        "questions": [
+            "Totalmente orientado/a",
+            "Totalmente orientado/a, com exceção de ligeira dificuldade com as inter-relações de tempo",
+            "Dificuldade moderada com as inter- relações de tempo; orientado/a para o local do exame; pode ter uma desorientação geográfica em lugares fora do local do exame",
+            "Grave dificuldade com as inter-relações de tempo; geralmente desorientado/a com relação ao tempo, e frequentemente com relação a lugares",
+            "Orientado/a somente em relação a ele/a mesmo/a"
+        ]
+    },
+    "judgment": {
+        "name": "Julgamento & Resolução de Problemas",
+        "numberOfQuestions": 5,
+        "questions": [
+            "Resolve os problemas do dia-a-dia e lida bem com os negócios e os assuntos financeiros; bom julgamento com relação à capacidade de julgamento no passado",
+            "Ligeira incapacidade para resolver problemas, semelhanças e diferenças",
+            "Dificuldade moderada para lidar com problemas, semelhanças, e diferenças; o julgamento social geralmente é mantido",
+            "Incapacidade séria para lidar com problemas, semelhanças e diferenças; o julgamento social geralmente está comprometido",
+            "Incapaz de fazer julgamentos ou resolver problemas"
+        ]
+    },
+    "communityAffairs": {
+        "name": "Atividades em Comunidade (Atividades fora de Casa)",
+        "numberOfQuestions": 5,
+        "questions": [
+            "Funciona de modo independente e habitual no trabalho, compras, grupos voluntários ou sociais",
+            "Ligeira incapacidade nestas atividades",
+            "Incapaz de funcionar independentemente nestas atividades apesar de ainda poder estar engajado/a em alguma; parece normal à primeira vista",
+            "Aparenta estar suficientemente bem para ser levado/a a acontecimentos fora de casa; Nenhuma intenção de funcionar de modo independente fora de casa",
+            "Aparenta estar muito doente para ser levado/a a acontecimentos fora de casa; Nenhuma intenção de funcionar de modo independente fora de casa"
+        ]
+    },
+    "homeAndHobbies": {
+        "name": "Atividades domésticas e passatempos",
+        "numberOfQuestions": 5,
+        "questions": [
+            "Vida doméstica, passatempos, e interesses intelectuais bem mantidos",
+            "Vida doméstica, passatempos, e interesses intelectuais ligeiramente comprometidos",
+            "Comprometimento leve porém definitivo nas atividades domésticas; abandono de tarefas mais difíceis, passatempos e interesses mais complicados são abandonados",
+            "Somente as tarefas mais simples são mantidas, interesses muito restritos, pouco mantidos",
+            "Nenhuma atividade doméstica significativa"
+        ]
+    },
+    "personalCare": {
+        "name": "Cuidados pessoais",
+        "numberOfQuestions": 4,
+        "questions": [
+            "Totalmente capaz de se cuidar",
+            "Necessita de incentivo",
+            "Precisa de assistência para se vestir, fazer a higiene, cuidar de seus objetos pessoais",
+            "Precisa de muita ajuda com relação aos cuidados pessoais, incontinência freqüente"
+        ]
+    }
+}
