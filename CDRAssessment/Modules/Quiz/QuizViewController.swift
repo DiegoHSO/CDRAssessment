@@ -64,13 +64,19 @@ class QuizViewController: BaseViewController {
         tableView.reloadData()
         
         if viewModel.shouldInsertBackButton() {
-            stackView.addSubview(backButton)
-            backButton.setTitle(NSLocalizedString("back", comment: ""), for: .normal)
-            stackView.layoutIfNeeded()
+            reconfigureButtons()
         } else {
             backButton.removeFromSuperview()
         }
         
+    }
+    
+    func reconfigureButtons() {
+        nextButton.removeFromSuperview()
+        stackView.addArrangedSubview(backButton)
+        stackView.addArrangedSubview(nextButton)
+        backButton.setTitle(NSLocalizedString("back", comment: ""), for: .normal)
+        stackView.layoutIfNeeded()
     }
     
 }
