@@ -17,10 +17,17 @@ class QuizViewController: BaseViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
     
     @IBAction func nextAction(_ sender: UIButton) {
         guard let selectedRow else { return }
         viewModel.nextCategory(selectedAnswer: selectedRow)
+    }
+    
+    @IBAction func backAction(_ sender: UIButton) {
+        viewModel.previousCategory()
+        selectedRow = viewModel.getCurrentSelectedAnswer()
     }
     
     init(coordinator: QuizCoordinator, viewModel: QuizViewModel) {
@@ -39,6 +46,9 @@ class QuizViewController: BaseViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        nextButton.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        nextButton.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        nextButton.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         titleLabel.text = NSLocalizedString("title", comment: "")
         categoryLabel.text = viewModel.getCurrentCategoryTitle()
         nextButton.setTitle(NSLocalizedString("next", comment: ""), for: .normal)
@@ -49,9 +59,18 @@ class QuizViewController: BaseViewController {
     }
     
     func changed(state: State) {
-        selectedRow = nil
+        selectedRow = viewModel.getCurrentSelectedAnswer()
         categoryLabel.text = viewModel.getCurrentCategoryTitle()
         tableView.reloadData()
+        
+        if viewModel.shouldInsertBackButton() {
+            stackView.addSubview(backButton)
+            backButton.setTitle(NSLocalizedString("back", comment: ""), for: .normal)
+            stackView.layoutIfNeeded()
+        } else {
+            backButton.removeFromSuperview()
+        }
+        
     }
     
 }
@@ -77,8 +96,10 @@ extension QuizViewController: UITableViewDataSource {
         }
         
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        cell.backgroundColor = UIColor.yellow
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        UIView.animate(withDuration: 0.5) {
+            cell.backgroundColor = UIColor.yellow
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        }
         selectedRow = indexPath.row
     }
     
@@ -93,9 +114,15 @@ extension QuizViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
 
+        if let selectedRow, selectedRow == indexPath.row {
+            cell.backgroundColor = UIColor.yellow
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        } else {
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+        }
+        
         cell.textLabel!.text = viewModel.getQuestion(for: indexPath.row)
         cell.textLabel!.numberOfLines = 4
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
         return cell
     }
     

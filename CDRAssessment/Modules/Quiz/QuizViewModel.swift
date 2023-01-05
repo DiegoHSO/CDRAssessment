@@ -15,13 +15,26 @@ public final class QuizViewModel {
         category.loadCategory(for: state.rawValue)
     }
     
-    var selectedAnswers: [Int] = []
+    var selectedAnswers: [String: Int] = [:]
     var category: Category = Category(name: "", numberOfQuestions: 0, questions: [])
     
     func nextCategory(selectedAnswer: Int) {
-        selectedAnswers.append(selectedAnswer)
+        selectedAnswers[currentState.rawValue] = selectedAnswer
         currentState = currentState.next()
         category.loadCategory(for: currentState.rawValue)
+    }
+    
+    func shouldInsertBackButton() -> Bool {
+        return currentState == .memory ? false : true
+    }
+    
+    func previousCategory() {
+        currentState = currentState.back()
+        category.loadCategory(for: currentState.rawValue)
+    }
+    
+    func getCurrentSelectedAnswer() -> Int? {
+        return selectedAnswers[currentState.rawValue]
     }
     
     func getCurrentCategoryTitle() -> String {

@@ -11,8 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizViewController" customModule="CDRAssessment" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="18M-s4-yFB" id="pR1-FX-xnR"/>
                 <outlet property="categoryLabel" destination="qEh-Ki-Qkx" id="kwp-6f-5H9"/>
                 <outlet property="nextButton" destination="fNr-Ch-uPE" id="QAa-lg-q5h"/>
+                <outlet property="stackView" destination="Wls-UI-a7k" id="7sM-Vd-xev"/>
                 <outlet property="tableView" destination="dTY-Zh-2cB" id="xIe-Lt-s2n"/>
                 <outlet property="titleLabel" destination="80y-Ob-ehP" id="Ueu-Qd-fCS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="iPp-Bt-tja"/>
@@ -42,7 +44,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40W-vJ-eei">
                     <rect key="frame" x="0.0" y="111" width="393" height="51"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="qEh-Ki-Qkx">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="qEh-Ki-Qkx">
                             <rect key="frame" x="15" y="13.333333333333329" width="378" height="24"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                             <color key="textColor" systemColor="systemBrownColor"/>
@@ -57,55 +59,88 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dTY-Zh-2cB">
-                    <rect key="frame" x="0.0" y="162" width="393" height="602"/>
+                    <rect key="frame" x="0.0" y="162" width="393" height="601"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNr-Ch-uPE">
-                    <rect key="frame" x="20" y="784" width="353" height="34"/>
-                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Próximo"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                            <integer key="value" value="15"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="5UC-Hd-om2"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wls-UI-a7k">
+                    <rect key="frame" x="20" y="783" width="353" height="35"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18M-s4-yFB">
+                            <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="35"/>
+                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Voltar" image="chevron.left" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="Rz4-Yg-bSk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNr-Ch-uPE">
+                            <rect key="frame" x="181.66666666666663" y="0.0" width="171.33333333333337" height="35"/>
+                            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Próximo" image="chevron.right" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="5UC-Hd-om2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="TmD-oJ-boT"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fNr-Ch-uPE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="2WH-gu-vJh"/>
                 <constraint firstItem="apW-xD-Omr" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="67X-sv-n3n"/>
+                <constraint firstItem="Wls-UI-a7k" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7ia-jk-OpD"/>
                 <constraint firstItem="40W-vJ-eei" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8XL-qU-SSK"/>
+                <constraint firstItem="Wls-UI-a7k" firstAttribute="top" secondItem="dTY-Zh-2cB" secondAttribute="bottom" constant="20" id="Jbi-uv-iKJ"/>
+                <constraint firstItem="Wls-UI-a7k" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="QDS-Rs-oRg"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="apW-xD-Omr" secondAttribute="trailing" id="S2w-oV-HX0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dTY-Zh-2cB" secondAttribute="trailing" id="Sf2-FX-XXJ"/>
                 <constraint firstItem="apW-xD-Omr" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.130235" id="YkC-0N-Oj3"/>
                 <constraint firstItem="40W-vJ-eei" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.0598592" id="ZBB-35-aYq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="40W-vJ-eei" secondAttribute="trailing" id="ZcR-1c-Rd3"/>
-                <constraint firstItem="fNr-Ch-uPE" firstAttribute="top" secondItem="dTY-Zh-2cB" secondAttribute="bottom" constant="20" id="aaw-Ij-Ern"/>
                 <constraint firstItem="apW-xD-Omr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="c9h-z0-FbN"/>
                 <constraint firstItem="dTY-Zh-2cB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cd4-R4-UBy"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fNr-Ch-uPE" secondAttribute="bottom" id="dOy-cb-dHB"/>
                 <constraint firstItem="apW-xD-Omr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="g27-h5-YbZ"/>
-                <constraint firstItem="fNr-Ch-uPE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gMD-xh-h8f"/>
+                <constraint firstAttribute="trailing" secondItem="Wls-UI-a7k" secondAttribute="trailing" constant="20" id="gT1-Bp-maf"/>
                 <constraint firstItem="40W-vJ-eei" firstAttribute="top" secondItem="apW-xD-Omr" secondAttribute="bottom" id="lmL-Yh-qGs"/>
                 <constraint firstItem="dTY-Zh-2cB" firstAttribute="top" secondItem="40W-vJ-eei" secondAttribute="bottom" id="rzc-m6-0aM"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fNr-Ch-uPE" secondAttribute="trailing" constant="20" id="z36-jh-xzC"/>
                 <constraint firstItem="40W-vJ-eei" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="zaQ-im-sXY"/>
             </constraints>
             <point key="canvasLocation" x="-80.152671755725194" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
