@@ -11,3 +11,11 @@
 "start" = "Começar";
 "next" = "Próximo";
 "back" = "Voltar";
+"result" = "Resultado da Avaliação na escala CDR";
+"score" = "Pontuação CDR";
+"home" = "Início";
+"none" = "Nenhum";
+"questionable" = "Questionável";
+"mild" = "Leve";
+"moderate" = "Moderado";
+"severe" = "Grave";

@@ -59,6 +59,11 @@ class QuizViewController: BaseViewController {
     }
     
     func changed(state: State) {
+        if viewModel.shouldGoToResults() {
+            coordinator?.goToResults(answers: viewModel.selectedAnswers)
+            return
+        }
+        
         selectedRow = viewModel.getCurrentSelectedAnswer()
         categoryLabel.text = viewModel.getCurrentCategoryTitle()
         tableView.reloadData()

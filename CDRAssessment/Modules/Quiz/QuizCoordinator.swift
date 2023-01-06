@@ -27,4 +27,10 @@ class QuizCoordinator: Coordinator {
     override func finish() {
         rootNavigationController.popViewController(animated: true)
     }
+    
+    func goToResults(answers: [String: Int]) {
+        let resultsCoordinator = ResultsCoordinator(rootNavigationController: rootNavigationController, answers: answers)
+        addChildCoordinator(resultsCoordinator)
+        resultsCoordinator.start()
+    }
 }

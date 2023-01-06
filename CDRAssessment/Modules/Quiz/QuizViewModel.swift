@@ -24,6 +24,10 @@ public final class QuizViewModel {
         category.loadCategory(for: currentState.rawValue)
     }
     
+    func shouldGoToResults() -> Bool {
+        return selectedAnswers["personalCare"] != nil ? true : false
+    }
+    
     func shouldInsertBackButton() -> Bool {
         return currentState == .memory ? false : true
     }

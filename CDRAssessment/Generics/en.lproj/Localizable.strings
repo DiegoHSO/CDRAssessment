@@ -11,3 +11,11 @@
 "start" = "Start";
 "next" = "Next";
 "back" = "Back";
+"result" = "CDR Scale Assessment Result";
+"score" = "CDR Score";
+"home" = "Home";
+"none" = "None";
+"questionable" = "Questionable";
+"mild" = "Mild";
+"moderate" = "Moderate";
+"severe" = "Severe";

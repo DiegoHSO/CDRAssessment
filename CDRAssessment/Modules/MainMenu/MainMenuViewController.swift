@@ -15,7 +15,6 @@ class MainMenuViewController: UIViewController, Storyboarded {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     
-    
     @IBAction func startAction(_ sender: UIButton) {
         coordinator?.goToQuiz()
     }
@@ -27,7 +26,10 @@ class MainMenuViewController: UIViewController, Storyboarded {
         startButton.setTitle(NSLocalizedString("start", comment: ""), for: .normal)
         // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        coordinator?.removeAllChildCoordinators()
+    }
+    
 }
 
