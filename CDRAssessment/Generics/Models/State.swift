@@ -15,19 +15,3 @@ enum State: String, CaseIterable {
     case homeAndHobbies
     case personalCare
 }
-
-extension CaseIterable where Self: Equatable {
-    func next() -> Self {
-        let all = Self.allCases
-        let idx = all.firstIndex(of: self)!
-        let next = all.index(after: idx)
-        return all[next == all.endIndex ? all.startIndex : next]
-    }
-    
-    func back() -> Self {
-        let all = Self.allCases
-        let idx = all.firstIndex(of: self)!
-        let previous = idx == all.startIndex ? all.endIndex : all.index(idx, offsetBy: -1)
-        return all[previous]
-    }
-}

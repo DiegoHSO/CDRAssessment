@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,22 +61,79 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DaI-gs-fd4">
+                                <rect key="frame" x="86.666666666666686" y="758" width="220" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desenvolvido por:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hr7-J0-6e3">
+                                        <rect key="frame" x="38.333333333333329" y="0.0" width="143" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemPurpleColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diego Henrique S. Oliveira" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="485-Wv-UpV">
+                                        <rect key="frame" x="8" y="34" width="204" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1bC-4W-MAL"/>
+                                    <constraint firstAttribute="width" constant="220" id="SYB-WK-8Q9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9X-NS-ZsN">
+                                <rect key="frame" x="121.66666666666669" y="698" width="150" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="NGF-lP-Aul"/>
+                                    <constraint firstAttribute="height" constant="40" id="SvJ-qe-Doc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="tintColor" systemColor="systemBrownColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Referência">
+                                    <color key="titleColor" systemColor="systemBrownColor"/>
+                                    <imageReference key="image" image="book.closed.circle.fill" catalog="system" symbolScale="default"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="referenceAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKn-9B-aGj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sSU-zp-fRL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8gh-no-MfU"/>
+                            <constraint firstItem="A9X-NS-ZsN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FKV-Ir-Kzj"/>
+                            <constraint firstItem="DaI-gs-fd4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QA4-EP-Vv5"/>
                             <constraint firstItem="P04-5g-zAH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Trg-Zy-xgQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sSU-zp-fRL" secondAttribute="trailing" id="WHf-Uz-IXe"/>
                             <constraint firstItem="P04-5g-zAH" firstAttribute="top" secondItem="sSU-zp-fRL" secondAttribute="bottom" constant="37" id="d2e-XX-tjL"/>
                             <constraint firstItem="sSU-zp-fRL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ggl-py-UG7"/>
                             <constraint firstItem="sSU-zp-fRL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hHb-aH-MrG"/>
+                            <constraint firstItem="DaI-gs-fd4" firstAttribute="top" secondItem="A9X-NS-ZsN" secondAttribute="bottom" constant="20" id="nfd-rg-p89"/>
                             <constraint firstItem="P04-5g-zAH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ohj-Jz-9O3"/>
                             <constraint firstAttribute="trailing" secondItem="P04-5g-zAH" secondAttribute="trailing" constant="20" id="pvB-kz-8uQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DaI-gs-fd4" secondAttribute="bottom" id="w5Z-q2-tD0"/>
                             <constraint firstItem="sSU-zp-fRL" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.130235" id="zMZ-hL-RTe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="developerLabel" destination="Hr7-J0-6e3" id="Ic4-1j-9tA"/>
+                        <outlet property="referenceButton" destination="A9X-NS-ZsN" id="H4I-k0-i5D"/>
                         <outlet property="startButton" destination="OxY-p8-qd8" id="hT5-oW-uDx"/>
                         <outlet property="subtitleLabel" destination="3dP-Ja-ErR" id="QEg-ru-Ie7"/>
                         <outlet property="titleLabel" destination="UME-hR-FGh" id="0JE-BQ-egL"/>
@@ -87,8 +145,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book.closed.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

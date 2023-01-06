@@ -18,6 +18,14 @@ public final class QuizViewModel {
     var selectedAnswers: [String: Int] = [:]
     var category: Category = Category(name: "", numberOfQuestions: 0, questions: [])
     
+    func getAnswers() -> [String: Int] {
+        return selectedAnswers
+    }
+    
+    func resetData() {
+        selectedAnswers = [:]
+    }
+    
     func nextCategory(selectedAnswer: Int) {
         selectedAnswers[currentState.rawValue] = selectedAnswer
         currentState = currentState.next()

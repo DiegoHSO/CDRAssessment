@@ -8,6 +8,8 @@
 
 "title" = "Escala Clinical Dementia Rating";
 "subtitle" = "Avaliação através da escala\nClinical Dementia Rating (CDR)";
+"reference" = "Referência";
+"developer" = "Desenvolvido por";
 "start" = "Começar";
 "next" = "Próximo";
 "back" = "Voltar";

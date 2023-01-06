@@ -17,6 +17,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var homeButton: UIButton!
     
     @IBAction func homeAction(_ sender: UIButton) {
+        viewModel.resetData()
         coordinator?.finish()
     }
     
@@ -36,13 +37,13 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.calculateCDRScale()
         titleLabel.text = NSLocalizedString("title", comment: "")
         subtitleLabel.text = NSLocalizedString("result", comment: "")
         scoreTextLabel.text = NSLocalizedString("score", comment: "")
-//        scoreValueLabel.text = viewModel.getScoreValue()
-//        scoreCategoryLabel.text = viewModel.getScoreCategory()
+        scoreValueLabel.text = viewModel.getScoreValue()
+        scoreCategoryLabel.text = NSLocalizedString(viewModel.getScoreCategory(), comment: "")
         homeButton.setTitle(NSLocalizedString("home", comment: ""), for: .normal)
-        viewModel.calculateCDRScale()
         // Do any additional setup after loading the view.
     }
 

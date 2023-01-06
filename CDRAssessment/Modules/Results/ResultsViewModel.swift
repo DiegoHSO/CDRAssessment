@@ -10,19 +10,29 @@ import UIKit
 public final class ResultsViewModel {
     
     var selectedAnswers: [String: Int]
-    var score: Int = 0
-    var scoreCategory: String = ""
+    var score: CDR?
     
     init(answers: [String: Int]) {
         selectedAnswers = answers
     }
     
+    func resetData() {
+        selectedAnswers = [:]
+        score = nil
+    }
+    
     func getScoreValue() -> String {
-        return ""
+        guard let value = score?.rawValue else {
+            return ""
+        }
+        return String(value)
     }
     
     func getScoreCategory() -> String {
-        return ""
+        guard let value = score?.description else {
+            return ""
+        }
+        return value
     }
     
     func calculateCDRScale() {
@@ -36,7 +46,7 @@ public final class ResultsViewModel {
             }
         }
         
-        var newResults = Dictionary(uniqueKeysWithValues: tupleArray)
+        let newResults = Dictionary(uniqueKeysWithValues: tupleArray)
         
         // MARK: Memory score
         let memoryScore: Float = newResults["memory"] ?? 0
@@ -50,50 +60,50 @@ public final class ResultsViewModel {
             return value == memoryScore ? value : nil
         }
         
-        let secondaryEqualToMemorySum: Float = secondaryEqualToMemory.compactMap { $0.value! }.reduce(0, +)
+        let secondaryEqualToMemorySum = secondaryEqualToMemory.compactMap { $0.value }.count
         
         // MARK: Secondary categories with score bigger than Memory
         let secondaryBiggerThanMemory = secondaryCategoriesScore.mapValues { value in
             return value > memoryScore ? value : nil
         }
         
-        let secondaryBiggerThanMemorySum: Float = secondaryBiggerThanMemory.compactMap { $0.value! }.reduce(0, +)
+        let secondaryBiggerThanMemorySum = secondaryBiggerThanMemory.compactMap { $0.value }.count
         
         // MARK: Secondary categories with score lesser than Memory
         let secondaryLesserThanMemory = secondaryCategoriesScore.mapValues { value in
             return value < memoryScore ? value : nil
         }
         
-        let secondaryLesserThanMemorySum: Float = secondaryLesserThanMemory.compactMap { $0.value! }.reduce(0, +)
+        let secondaryLesserThanMemorySum = secondaryLesserThanMemory.compactMap { $0.value }.count
         
         // MARK: Total sum from secondary categories with value different than Memory
-        let totalSumSecondaryCategories: Float = secondaryBiggerThanMemorySum + secondaryLesserThanMemorySum
+        let totalSumSecondaryCategories = secondaryBiggerThanMemorySum + secondaryLesserThanMemorySum
         
         // MARK: Which side of Memory is the largest
         let side: Direction = secondaryBiggerThanMemorySum > secondaryLesserThanMemorySum ? .right : secondaryLesserThanMemorySum > secondaryBiggerThanMemorySum ? .left : .tie
         
         // MARK: Two secondary categories one side, three on the other
         let twoCategoriesOneSideThreeOnAnother: Bool = totalSumSecondaryCategories != 5 ? false :
-        (secondaryBiggerThanMemorySum.isEqual(to: 2) || secondaryBiggerThanMemorySum.isEqual(to: 3)) &&
-        (secondaryLesserThanMemorySum.isEqual(to: 2) || secondaryLesserThanMemorySum.isEqual(to: 3)) ? true : false
+        (secondaryBiggerThanMemorySum == 2 || secondaryBiggerThanMemorySum == 3) &&
+        (secondaryLesserThanMemorySum == 2 || secondaryLesserThanMemorySum == 3) ? true : false
         
         // MARK: Take out left and right vectors
-        let leftVector = secondaryLesserThanMemory
-        let rightVector = secondaryBiggerThanMemory
+        let leftVector = secondaryLesserThanMemory.compactMap { $0.value }
+        let rightVector = secondaryBiggerThanMemory.compactMap { $0.value }
         
         // MARK: Sum secondary categories with value >= 1
         let secondaryBiggerThanOne = secondaryCategoriesScore.mapValues { value in
             return value >= 1 ? value : nil
         }
         
-        let secondaryBiggerThanOneSum: Float = secondaryBiggerThanOne.compactMap { $0.value! }.reduce(0, +)
+        let secondaryBiggerThanOneSum: Float = secondaryBiggerThanOne.compactMap { $0.value }.reduce(0, +)
         
         // MARK: Sum secondary categories with value >= 0.5
         let secondaryBiggerThanPointFive = secondaryCategoriesScore.mapValues { value in
             return value >= 0.5 ? value : nil
         }
         
-        let secondaryBiggerThanPointFiveSum: Float = secondaryBiggerThanPointFive.compactMap { $0.value! }.reduce(0, +)
+        let secondaryBiggerThanPointFiveSum: Float = secondaryBiggerThanPointFive.compactMap { $0.value }.reduce(0, +)
         
         // MARK: - Assign a diagnosis
         
@@ -108,13 +118,92 @@ public final class ResultsViewModel {
             cdr = memoryScore
         }
         
+        // MARK: Three or more secondary categories with value != Memory
+        if totalSumSecondaryCategories >= 3 {
+            // if right
+            if side == .right {
+                let mostFrequent = rightVector.mostFrequent?.mostFrequent
+                if let mostFrequent = mostFrequent?.max() {
+                    cdr = mostFrequent
+                }
+            } else if side == .left {
+                // if left
+                let mostFrequent = leftVector.mostFrequent?.mostFrequent
+                if let mostFrequent = mostFrequent?.max() {
+                    cdr = mostFrequent
+                }
+            } else {
+                // if tie
+                cdr = 200
+            }
+        }
         
+        // MARK: Three secondary categories on one side of Memory, two on the other
+        if twoCategoriesOneSideThreeOnAnother {
+            cdr = memoryScore
+        }
         
+        // MARK: SECONDARY RULES
+        
+        // if Memory = 0.5 then CDR = 1 if there are at least three secondary categories >= 1
+        if (memoryScore == 0.5 && secondaryBiggerThanOneSum >= 3) {
+            cdr = 1
+        }
+        
+        // if Memory = 0.5 then CDR cannot be 0, only 0.5 or 1
+        if (memoryScore == 0.5 && cdr == 0) {
+            cdr = 0.5
+        }
+        
+        // if Memory = 0 CDR -> 0 unless there is impairment in at least two secondary categories
+        if (memoryScore == 0) {
+            cdr = 0
+        }
+        
+        if (memoryScore == 0 && secondaryBiggerThanPointFiveSum >= 2) {
+            cdr = 0.5
+        }
+        
+        // MARK: SPECIAL RULES
+        
+        // (1) Ties one side of Memory, that is M + 1 = 3, the others 2 2 1 1 etc.
+        if (secondaryLesserThanMemorySum == 4 && leftVector.uniqued().count == 2) {
+            if let firstElement = leftVector.uniqued().first {
+                let arrayOfFirstElementValues = leftVector.filter { $0 == firstElement }
+                if arrayOfFirstElementValues.count == 2 {
+                    if let maxValue = leftVector.uniqued().max() {
+                        cdr = maxValue
+                    }
+                }
+            }
+        }
+        
+        if (secondaryBiggerThanMemorySum == 4 && rightVector.uniqued().count == 2) {
+            if let firstElement = rightVector.uniqued().first {
+                let arrayOfFirstElementValues = rightVector.filter { $0 == firstElement }
+                if arrayOfFirstElementValues.count == 2 {
+                    if let maxValue = rightVector.uniqued().max() {
+                        cdr = maxValue
+                    }
+                }
+            }
+        }
+        
+        // (2) Only 1 or 2 secondary categories equal Memory
+        if secondaryEqualToMemorySum == 1 || secondaryEqualToMemorySum == 2 {
+            if secondaryLesserThanMemorySum <= 2 && secondaryBiggerThanMemorySum <= 2 {
+                cdr = memoryScore
+            }
+        }
+        
+        // # (3) If memory >= 1 CDR cannot be 0
+        let secondaryCategoriesScoreValues = secondaryCategoriesScore.compactMap { $0.value }
+        if let mostFrequentValues = secondaryCategoriesScoreValues.mostFrequent?.mostFrequent {
+            if (memoryScore >= 1) && (cdr == 0) && (mostFrequentValues.contains(0)) {
+                cdr = 0.5
+            }
+        }
+        
+        score = CDR(rawValue: cdr)
     }
-}
-
-enum Direction {
-    case right
-    case left
-    case tie
 }

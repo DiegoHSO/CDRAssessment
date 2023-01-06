@@ -60,7 +60,8 @@ class QuizViewController: BaseViewController {
     
     func changed(state: State) {
         if viewModel.shouldGoToResults() {
-            coordinator?.goToResults(answers: viewModel.selectedAnswers)
+            coordinator?.goToResults(answers: viewModel.getAnswers())
+            viewModel.resetData()
             return
         }
         

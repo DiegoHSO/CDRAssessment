@@ -41,6 +41,11 @@ class MainMenuCoordinator: Coordinator {
         quizCoordinator.start()
     }
     
+    func goToReferencePage() {
+        if let url = URL(string: "https://knightadrc.wustl.edu/wp-content/uploads/2021/06/CDR-Scoring-Rules.pdf") {
+            UIApplication.shared.open(url)
+        }
+    }
 }
 
 
