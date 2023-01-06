@@ -109,7 +109,7 @@ extension QuizViewController: UITableViewDataSource {
         
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
         UIView.animate(withDuration: 0.5) {
-            cell.backgroundColor = UIColor.yellow
+            cell.backgroundColor = UIColor.systemYellow
             cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         }
         selectedRow = indexPath.row
@@ -127,7 +127,7 @@ extension QuizViewController: UITableViewDataSource {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
 
         if let selectedRow, selectedRow == indexPath.row {
-            cell.backgroundColor = UIColor.yellow
+            cell.backgroundColor = UIColor.systemYellow
             cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         } else {
             cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
