@@ -12,7 +12,7 @@ public final class QuizViewModel {
     
     init(state: State) {
         currentState = state
-        category.loadCategory(for: state.rawValue)
+        category.loadCategory(for: state.description)
     }
     
     var selectedAnswers: [String: Int] = [:]
@@ -27,9 +27,9 @@ public final class QuizViewModel {
     }
     
     func nextCategory(selectedAnswer: Int) {
-        selectedAnswers[currentState.rawValue] = selectedAnswer
+        selectedAnswers[currentState.description] = selectedAnswer
         currentState = currentState.next()
-        category.loadCategory(for: currentState.rawValue)
+        category.loadCategory(for: currentState.description)
     }
     
     func shouldGoToResults() -> Bool {
@@ -42,11 +42,11 @@ public final class QuizViewModel {
     
     func previousCategory() {
         currentState = currentState.back()
-        category.loadCategory(for: currentState.rawValue)
+        category.loadCategory(for: currentState.description)
     }
     
     func getCurrentSelectedAnswer() -> Int? {
-        return selectedAnswers[currentState.rawValue]
+        return selectedAnswers[currentState.description]
     }
     
     func getCurrentCategoryTitle() -> String {

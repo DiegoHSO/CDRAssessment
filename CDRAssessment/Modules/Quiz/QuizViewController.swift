@@ -8,27 +8,13 @@
 import UIKit
 
 class QuizViewController: BaseViewController {
-
+    
     weak var coordinator: QuizCoordinator?
     var viewModel: QuizViewModel
     var selectedRow: Int?
-
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var categoryLabel: UILabel!
+    private let quizCategories: [QuizCategories] = QuizCategories.allCases
+    
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet var backButton: UIButton!
-    @IBOutlet weak var stackView: UIStackView!
-    
-    @IBAction func nextAction(_ sender: UIButton) {
-        guard let selectedRow else { return }
-        viewModel.nextCategory(selectedAnswer: selectedRow)
-    }
-    
-    @IBAction func backAction(_ sender: UIButton) {
-        viewModel.previousCategory()
-        selectedRow = viewModel.getCurrentSelectedAnswer()
-    }
     
     init(coordinator: QuizCoordinator, viewModel: QuizViewModel) {
         self.coordinator = coordinator
@@ -45,12 +31,8 @@ class QuizViewController: BaseViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        nextButton.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        nextButton.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        nextButton.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        titleLabel.text = NSLocalizedString("title", comment: "")
+        //        titleLabel.text = NSLocalizedString("title", comment: "")
         categoryLabel.text = viewModel.getCurrentCategoryTitle()
-        nextButton.setTitle(NSLocalizedString("next", comment: ""), for: .normal)
         observe(viewModel.$currentState) { [weak self] state in
             guard let self = self else { return }
             self.changed(state: state)
@@ -86,6 +68,18 @@ class QuizViewController: BaseViewController {
     
 }
 
+extension QuizViewController: ButtonsDelegate {
+    func didPressBackButton() {
+        viewModel.previousCategory()
+        selectedRow = viewModel.getCurrentSelectedAnswer()
+    }
+    
+    func didPressNextButton() {
+        guard let selectedRow else { return }
+        viewModel.nextCategory(selectedAnswer: selectedRow)
+    }
+}
+
 extension QuizViewController: UITableViewDelegate {
     
 }
@@ -95,23 +89,29 @@ extension QuizViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        if let selectedRow {
-            if selectedRow == indexPath.row {
-                return
+        switch quizCategories[indexPath.row] {
+        case .question:
+            if let selectedRow {
+                if selectedRow == indexPath.row {
+                    return
+                }
+                
+                if let previousCell = tableView.cellForRow(at: IndexPath(row: selectedRow, section: indexPath.section)) {
+                    previousCell.textLabel!.font = UIFont.systemFont(ofSize: 15)
+                    previousCell.backgroundColor = UIColor.clear
+                }
             }
             
-            if let previousCell = tableView.cellForRow(at: IndexPath(row: selectedRow, section: indexPath.section)) {
-                previousCell.textLabel!.font = UIFont.systemFont(ofSize: 15)
-                previousCell.backgroundColor = UIColor.clear
+            guard let cell = tableView.cellForRow(at: indexPath) else { return }
+            UIView.animate(withDuration: 0.5) {
+                cell.backgroundColor = UIColor.systemYellow
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
             }
+            selectedRow = indexPath.row
+        default:
+            return
+            
         }
-        
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        UIView.animate(withDuration: 0.5) {
-            cell.backgroundColor = UIColor.systemYellow
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        }
-        selectedRow = indexPath.row
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -119,22 +119,50 @@ extension QuizViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getNumberofQuestions()
+        return viewModel.getNumberofQuestions() + 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-
-        if let selectedRow, selectedRow == indexPath.row {
-            cell.backgroundColor = UIColor.systemYellow
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        } else {
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+        switch quizCategories[indexPath.row] {
+        case .progressBar:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProgressBarTableViewCell.identifier, for: indexPath) as? ProgressBarTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            let value = CGFloat(viewModel.currentState.rawValue) / CGFloat(State.allCases.endIndex + 1)
+            cell.progressBar.configProgressValue(value: value)
+            return cell
+            
+        case .category:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as? CategoryTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.categoryLabel.text = viewModel.getCurrentCategoryTitle()
+            return cell
+            
+        case .question:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell.identifier, for: indexPath) as? QuestionTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            if let selectedRow, selectedRow == indexPath.row {
+                cell.questionView.backgroundColor = UIColor(named: "selectedColor")
+                //                cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+            }
+            
+            cell.questionLabel.text = viewModel.getQuestion(for: indexPath.row)
+            cell.questionLabel.numberOfLines = 4
+            return cell
+            
+        case .buttons:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ButtonsTableViewCell.identifier, for: indexPath) as? ButtonsTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.delegate = self
+            return cell
         }
-        
-        cell.textLabel!.text = viewModel.getQuestion(for: indexPath.row)
-        cell.textLabel!.numberOfLines = 4
-        return cell
     }
     
     
