@@ -29,6 +29,14 @@ class ButtonsTableViewCell: UITableViewCell {
         delegate?.didPressBackButton()
     }
     
+    func reconfigureButtons() {
+        nextButton.removeFromSuperview()
+        stackView.addArrangedSubview(backButton)
+        stackView.addArrangedSubview(nextButton)
+        backButton.setTitle(NSLocalizedString("back", comment: ""), for: .normal)
+        stackView.layoutIfNeeded()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         nextButton.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)

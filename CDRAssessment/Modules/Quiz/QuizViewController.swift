@@ -7,10 +7,10 @@
 
 import UIKit
 
-class QuizViewController: BaseViewController {
+class QuizViewController: BaseViewController, Storyboarded {
     
     weak var coordinator: QuizCoordinator?
-    var viewModel: QuizViewModel
+    var viewModel: QuizViewModel?
     var selectedRow: Int?
     private let quizCategories: [QuizCategories] = QuizCategories.allCases
     
@@ -32,7 +32,8 @@ class QuizViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         //        titleLabel.text = NSLocalizedString("title", comment: "")
-        categoryLabel.text = viewModel.getCurrentCategoryTitle()
+//        categoryLabel.text = viewModel.getCurrentCategoryTitle()
+        guard let viewModel = viewModel else { return }
         observe(viewModel.$currentState) { [weak self] state in
             guard let self = self else { return }
             self.changed(state: state)
@@ -40,6 +41,7 @@ class QuizViewController: BaseViewController {
     }
     
     func changed(state: State) {
+        guard let viewModel = viewModel else { return }
         if viewModel.shouldGoToResults() {
             coordinator?.goToResults(answers: viewModel.getAnswers())
             viewModel.resetData()
@@ -47,34 +49,21 @@ class QuizViewController: BaseViewController {
         }
         
         selectedRow = viewModel.getCurrentSelectedAnswer()
-        categoryLabel.text = viewModel.getCurrentCategoryTitle()
+//        categoryLabel.text = viewModel.getCurrentCategoryTitle()
         tableView.reloadData()
-        
-        if viewModel.shouldInsertBackButton() {
-            reconfigureButtons()
-        } else {
-            backButton.removeFromSuperview()
-        }
-        
-    }
-    
-    func reconfigureButtons() {
-        nextButton.removeFromSuperview()
-        stackView.addArrangedSubview(backButton)
-        stackView.addArrangedSubview(nextButton)
-        backButton.setTitle(NSLocalizedString("back", comment: ""), for: .normal)
-        stackView.layoutIfNeeded()
     }
     
 }
 
 extension QuizViewController: ButtonsDelegate {
     func didPressBackButton() {
+        guard let viewModel = viewModel else { return }
         viewModel.previousCategory()
         selectedRow = viewModel.getCurrentSelectedAnswer()
     }
     
     func didPressNextButton() {
+        guard let viewModel = viewModel else { return }
         guard let selectedRow else { return }
         viewModel.nextCategory(selectedAnswer: selectedRow)
     }
@@ -119,10 +108,13 @@ extension QuizViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = viewModel else { return 3 }
         return viewModel.getNumberofQuestions() + 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = viewModel else { return UITableViewCell() }
+        
         switch quizCategories[indexPath.row] {
         case .progressBar:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProgressBarTableViewCell.identifier, for: indexPath) as? ProgressBarTableViewCell else {
@@ -158,6 +150,12 @@ extension QuizViewController: UITableViewDataSource {
         case .buttons:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ButtonsTableViewCell.identifier, for: indexPath) as? ButtonsTableViewCell else {
                 return UITableViewCell()
+            }
+            
+            if viewModel.shouldInsertBackButton() {
+                cell.reconfigureButtons()
+            } else {
+                cell.backButton.removeFromSuperview()
             }
             
             cell.delegate = self

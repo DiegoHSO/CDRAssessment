@@ -20,7 +20,9 @@ class QuizCoordinator: Coordinator {
     }
     
     override func start() {
-        let viewController = QuizViewController(coordinator: self, viewModel: viewModel)
+        let viewController = QuizViewController.instantiate("Quiz")
+        viewController.coordinator = self
+        viewController.viewModel = viewModel
         rootNavigationController.pushViewController(viewController, animated: true)
     }
 
