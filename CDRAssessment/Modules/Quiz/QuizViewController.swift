@@ -8,7 +8,7 @@
 import UIKit
 
 class QuizViewController: BaseViewController {
-    
+
     weak var coordinator: QuizCoordinator?
     var viewModel: QuizViewModel
     var selectedRow: Int?
@@ -39,7 +39,6 @@ class QuizViewController: BaseViewController {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

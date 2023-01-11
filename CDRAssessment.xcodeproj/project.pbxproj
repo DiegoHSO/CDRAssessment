@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F143D7D4296F0DB6005F8658 /* ProgressBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F143D7D1296F0DB6005F8658 /* ProgressBarView.xib */; };
+		F143D7D5296F0DB6005F8658 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7D2296F0DB6005F8658 /* ProgressBarView.swift */; };
+		F143D7D6296F0DB6005F8658 /* PlainHorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7D3296F0DB6005F8658 /* PlainHorizontalProgressBar.swift */; };
+		F143D7D8296F0ED6005F8658 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F143D7D7296F0ED6005F8658 /* Quiz.storyboard */; };
 		F14EB0642965F4720045E6AB /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14EB0632965F4720045E6AB /* QuizViewController.xib */; };
 		F17ACE252965F26C0028E2CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE242965F26C0028E2CD /* AppDelegate.swift */; };
 		F17ACE272965F26C0028E2CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE262965F26C0028E2CD /* SceneDelegate.swift */; };
@@ -34,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F143D7D1296F0DB6005F8658 /* ProgressBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarView.xib; sourceTree = "<group>"; };
+		F143D7D2296F0DB6005F8658 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		F143D7D3296F0DB6005F8658 /* PlainHorizontalProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainHorizontalProgressBar.swift; sourceTree = "<group>"; };
+		F143D7D7296F0ED6005F8658 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		F14EB0632965F4720045E6AB /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		F17ACE212965F26C0028E2CD /* CDRAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDRAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17ACE242965F26C0028E2CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F143D7D0296F0D88005F8658 /* ProgressBarView */ = {
+			isa = PBXGroup;
+			children = (
+				F143D7D3296F0DB6005F8658 /* PlainHorizontalProgressBar.swift */,
+				F143D7D2296F0DB6005F8658 /* ProgressBarView.swift */,
+				F143D7D1296F0DB6005F8658 /* ProgressBarView.xib */,
+			);
+			path = ProgressBarView;
+			sourceTree = "<group>";
+		};
 		F17ACE182965F26C0028E2CD = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +194,9 @@
 		F1BDA65F29661B2F00972E7B /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				F143D7D0296F0D88005F8658 /* ProgressBarView */,
 				F14EB0632965F4720045E6AB /* QuizViewController.xib */,
+				F143D7D7296F0ED6005F8658 /* Quiz.storyboard */,
 				F1BDA6342965F5B700972E7B /* QuizViewModel.swift */,
 				F1BDA660296620F400972E7B /* QuizViewController.swift */,
 				F1BDA6622966236000972E7B /* QuizCoordinator.swift */,
@@ -255,9 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17ACE312965F26E0028E2CD /* LaunchScreen.storyboard in Resources */,
+				F143D7D4296F0DB6005F8658 /* ProgressBarView.xib in Resources */,
 				F1BDA64C2965FCCF00972E7B /* data.json in Resources */,
 				F17ACE2E2965F26E0028E2CD /* Assets.xcassets in Resources */,
 				F1BDA65B2966196600972E7B /* Localizable.strings in Resources */,
+				F143D7D8296F0ED6005F8658 /* Quiz.storyboard in Resources */,
 				F1BDA62E2965F4A800972E7B /* ResultsViewController.xib in Resources */,
 				F17ACE2C2965F26C0028E2CD /* MainMenu.storyboard in Resources */,
 				F14EB0642965F4720045E6AB /* QuizViewController.xib in Resources */,
@@ -272,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BDA6542966175500972E7B /* Coordinator.swift in Sources */,
+				F143D7D5296F0DB6005F8658 /* ProgressBarView.swift in Sources */,
 				F1BDA661296620F400972E7B /* QuizViewController.swift in Sources */,
 				F17ACE292965F26C0028E2CD /* MainMenuViewController.swift in Sources */,
 				F1BDA66A2967319900972E7B /* ResultsViewController.swift in Sources */,
@@ -283,6 +306,7 @@
 				F1BDA658296617C100972E7B /* Storyboarded.swift in Sources */,
 				F1BDA66C296731A400972E7B /* ResultsCoordinator.swift in Sources */,
 				F1BDA66E2967D31B00972E7B /* Extensions.swift in Sources */,
+				F143D7D6296F0DB6005F8658 /* PlainHorizontalProgressBar.swift in Sources */,
 				F17ACE272965F26C0028E2CD /* SceneDelegate.swift in Sources */,
 				F1BDA6682967318D00972E7B /* ResultsViewModel.swift in Sources */,
 				F1BDA6702967F73200972E7B /* CDR.swift in Sources */,
