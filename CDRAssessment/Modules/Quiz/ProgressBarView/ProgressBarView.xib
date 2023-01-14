@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressBarView" customModule="MacroChallenge" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressBarView" customModule="CDRAssessment" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="i5M-Pr-FkT" id="8QP-q9-31g"/>
                 <outlet property="progressBar" destination="lF7-0F-W4z" id="QNn-3C-kWV"/>
-                <outlet property="progressBarStatus" destination="EYG-nb-nXc" id="ngO-ap-NLA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,11 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="693" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lF7-0F-W4z" userLabel="ProgressBar" customClass="PlainHorizontalProgressBar" customModule="MacroChallenge" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="693" height="40"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYG-nb-nXc" userLabel="ProgressBarStatus" customClass="PlainHorizontalProgressBar" customModule="MacroChallenge" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lF7-0F-W4z" userLabel="ProgressBar" customClass="PlainHorizontalProgressBar" customModule="CDRAssessment" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="693" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -32,14 +27,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="EYG-nb-nXc" firstAttribute="top" secondItem="lF7-0F-W4z" secondAttribute="top" id="0jy-3f-vTQ"/>
-                <constraint firstItem="EYG-nb-nXc" firstAttribute="trailing" secondItem="lF7-0F-W4z" secondAttribute="trailing" id="43l-Rj-g4d"/>
                 <constraint firstItem="lF7-0F-W4z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RiY-PR-wST"/>
-                <constraint firstItem="EYG-nb-nXc" firstAttribute="bottom" secondItem="lF7-0F-W4z" secondAttribute="bottom" id="UBL-71-Bef"/>
                 <constraint firstItem="lF7-0F-W4z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aTM-LX-Yxk"/>
                 <constraint firstAttribute="bottom" secondItem="lF7-0F-W4z" secondAttribute="bottom" id="iII-MZ-SgL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lF7-0F-W4z" secondAttribute="trailing" id="n7q-sE-eJr"/>
-                <constraint firstItem="EYG-nb-nXc" firstAttribute="leading" secondItem="lF7-0F-W4z" secondAttribute="leading" id="pVY-Fu-9lT"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

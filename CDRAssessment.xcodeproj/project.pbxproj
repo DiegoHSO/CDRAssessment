@@ -15,7 +15,6 @@
 		F143D7DC296F2770005F8658 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7DB296F2770005F8658 /* CategoryTableViewCell.swift */; };
 		F143D7DE296F27BC005F8658 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7DD296F27BC005F8658 /* QuestionTableViewCell.swift */; };
 		F143D7E0296F2901005F8658 /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7DF296F2901005F8658 /* ButtonsTableViewCell.swift */; };
-		F143D7E3296F2D37005F8658 /* QuizCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7E2296F2D37005F8658 /* QuizCategories.swift */; };
 		F14EB0642965F4720045E6AB /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14EB0632965F4720045E6AB /* QuizViewController.xib */; };
 		F17ACE252965F26C0028E2CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE242965F26C0028E2CD /* AppDelegate.swift */; };
 		F17ACE272965F26C0028E2CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE262965F26C0028E2CD /* SceneDelegate.swift */; };
@@ -51,7 +50,6 @@
 		F143D7DB296F2770005F8658 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		F143D7DD296F27BC005F8658 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		F143D7DF296F2901005F8658 /* ButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTableViewCell.swift; sourceTree = "<group>"; };
-		F143D7E2296F2D37005F8658 /* QuizCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategories.swift; sourceTree = "<group>"; };
 		F14EB0632965F4720045E6AB /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		F17ACE212965F26C0028E2CD /* CDRAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDRAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17ACE242965F26C0028E2CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				F1BDA6392965F7D100972E7B /* State.swift */,
 				F1BDA6642966292700972E7B /* BaseViewController.swift */,
 				F1BDA66F2967F73200972E7B /* CDR.swift */,
-				F143D7E2296F2D37005F8658 /* QuizCategories.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,7 +319,6 @@
 				F143D7DA296F26C5005F8658 /* ProgressBarTableViewCell.swift in Sources */,
 				F143D7DE296F27BC005F8658 /* QuestionTableViewCell.swift in Sources */,
 				F143D7DC296F2770005F8658 /* CategoryTableViewCell.swift in Sources */,
-				F143D7E3296F2D37005F8658 /* QuizCategories.swift in Sources */,
 				F1BDA658296617C100972E7B /* Storyboarded.swift in Sources */,
 				F1BDA66C296731A400972E7B /* ResultsCoordinator.swift in Sources */,
 				F1BDA66E2967D31B00972E7B /* Extensions.swift in Sources */,

@@ -198,7 +198,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15018671750000001" green="0.17031845449999999" blue="0.28236472610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="MDd-Iw-IUi" firstAttribute="top" secondItem="mmG-E6-0AE" secondAttribute="top" id="0TR-ud-ghB"/>
                                     <constraint firstAttribute="trailing" secondItem="MDd-Iw-IUi" secondAttribute="trailing" id="2Km-wT-JMP"/>
@@ -208,7 +208,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.15018671750000001" green="0.17031845449999999" blue="0.28236472610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="mmG-E6-0AE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="T4l-La-I3y"/>
                             <constraint firstAttribute="bottomMargin" secondItem="mmG-E6-0AE" secondAttribute="bottom" id="YFn-pT-37s"/>
@@ -228,9 +228,6 @@
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

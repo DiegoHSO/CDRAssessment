@@ -12,7 +12,6 @@ class QuizViewController: BaseViewController, Storyboarded {
     weak var coordinator: QuizCoordinator?
     var viewModel: QuizViewModel?
     var selectedRow: Int?
-    private let quizCategories: [QuizCategories] = QuizCategories.allCases
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -68,8 +67,8 @@ extension QuizViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        switch quizCategories[indexPath.row] {
-        case .question:
+        switch indexPath.section {
+        case 1:
             if let selectedRow {
                 if selectedRow == indexPath.row {
                     return
@@ -89,41 +88,47 @@ extension QuizViewController: UITableViewDataSource {
             selectedRow = indexPath.row
         default:
             return
-            
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 3 }
-        return viewModel.getNumberofQuestions() + 3
+        if section == 0 {
+            return 2
+        } else if section == 1 {
+            return viewModel.getNumberofQuestions()
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let viewModel = viewModel else { return UITableViewCell() }
         
-        switch quizCategories[indexPath.row] {
-        case .progressBar:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProgressBarTableViewCell.identifier, for: indexPath) as? ProgressBarTableViewCell else {
-                return UITableViewCell()
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProgressBarTableViewCell.identifier, for: indexPath) as? ProgressBarTableViewCell else {
+                    return UITableViewCell()
+                }
+                
+                let value = CGFloat(viewModel.currentState.rawValue) / CGFloat(State.allCases.endIndex + 1)
+                cell.progressBar.configProgressValue(value: value)
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as? CategoryTableViewCell else {
+                    return UITableViewCell()
+                }
+                
+                cell.categoryLabel.text = viewModel.getCurrentCategoryTitle()
+                return cell
             }
             
-            let value = CGFloat(viewModel.currentState.rawValue) / CGFloat(State.allCases.endIndex + 1)
-            cell.progressBar.configProgressValue(value: value)
-            return cell
-            
-        case .category:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as? CategoryTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            cell.categoryLabel.text = viewModel.getCurrentCategoryTitle()
-            return cell
-            
-        case .question:
+        case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell.identifier, for: indexPath) as? QuestionTableViewCell else {
                 return UITableViewCell()
             }
@@ -137,7 +142,7 @@ extension QuizViewController: UITableViewDataSource {
             cell.questionLabel.numberOfLines = 4
             return cell
             
-        case .buttons:
+        case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ButtonsTableViewCell.identifier, for: indexPath) as? ButtonsTableViewCell else {
                 return UITableViewCell()
             }
@@ -150,6 +155,9 @@ extension QuizViewController: UITableViewDataSource {
             
             cell.delegate = self
             return cell
+        
+        default:
+            return UITableViewCell()
         }
     }
     

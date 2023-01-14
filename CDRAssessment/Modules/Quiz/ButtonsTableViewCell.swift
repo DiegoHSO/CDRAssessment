@@ -18,8 +18,8 @@ class ButtonsTableViewCell: UITableViewCell {
     weak var delegate: ButtonsDelegate?
     
     @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet var backButton: UIButton!
     
     @IBAction func nextAction(_ sender: UIButton) {
         delegate?.didPressNextButton()

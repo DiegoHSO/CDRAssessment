@@ -11,7 +11,6 @@ class ProgressBarView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var progressBar: PlainHorizontalProgressBar!
-    @IBOutlet weak var progressBarStatus: PlainHorizontalProgressBar!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,17 +30,18 @@ class ProgressBarView: UIView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         progressBar.isAccessibilityElement = true
         progressBar.accessibilityLabel = NSLocalizedString("progressBar", comment: "")
+        progressBar.layer.borderWidth = 4
+        progressBar.layer.borderColor = UIColor(named: "progressBarBorderColor")?.cgColor
     }
     
     func configProgressValue(value: CGFloat) {
-        progressBarStatus.progress = value
+        progressBar.progress = value
         progressBar.accessibilityHint = "\(Int(value))" + NSLocalizedString("completion", comment: "")
         
     }
     
     func configProgressColors(progressBarColor: UIColor, progressBarStatusColor: UIColor) {
-        progressBar.color = progressBarColor
-        progressBarStatus.color = progressBarStatusColor
+        progressBar.color = progressBarStatusColor
     }
     
 }

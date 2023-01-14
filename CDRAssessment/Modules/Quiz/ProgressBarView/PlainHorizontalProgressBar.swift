@@ -33,7 +33,8 @@ class PlainHorizontalProgressBar: UIView {
     }
 
     private func setupLayers() {
-        progressLayer.cornerRadius = 11
+//        progressLayer.cornerRadius = 21
+        self.layer.cornerRadius = 21
         layer.addSublayer(progressLayer)
     }
 
@@ -44,6 +45,14 @@ class PlainHorizontalProgressBar: UIView {
         let progressRect = CGRect(origin: .zero, size: CGSize(width: rect.width * progress, height: rect.height))
 
         progressLayer.frame = progressRect
-        progressLayer.backgroundColor = color.cgColor
+        
+        let gradient = CAGradientLayer()
+
+        gradient.frame = progressRect
+        gradient.cornerRadius = 21
+        gradient.colors = [UIColor(named: "firstGradientColor")!.cgColor, UIColor(named: "secondGradientColor")!.cgColor]
+        progressLayer.addSublayer(gradient)
+        
+//        progressLayer.backgroundColor = UIColor(named: "progressBarColor")?.cgColor
     }
 }
