@@ -13,6 +13,7 @@ class QuizViewController: BaseViewController, Storyboarded {
     var viewModel: QuizViewModel?
     var selectedRow: Int?
     
+    @IBOutlet weak var progressBar: ProgressBarView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -20,8 +21,7 @@ class QuizViewController: BaseViewController, Storyboarded {
         
         tableView.delegate = self
         tableView.dataSource = self
-        //        titleLabel.text = NSLocalizedString("title", comment: "")
-//        categoryLabel.text = viewModel.getCurrentCategoryTitle()
+        configProgress()
         guard let viewModel = viewModel else { return }
         observe(viewModel.$currentState) { [weak self] state in
             guard let self = self else { return }
@@ -32,14 +32,23 @@ class QuizViewController: BaseViewController, Storyboarded {
     func changed(state: State) {
         guard let viewModel = viewModel else { return }
         if viewModel.shouldGoToResults() {
-            coordinator?.goToResults(answers: viewModel.getAnswers())
-            viewModel.resetData()
-            return
+            progressBar.configProgressValue(value: 1)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.coordinator?.goToResults(answers: viewModel.getAnswers())
+                viewModel.resetData()
+                return
+            }
+        } else {
+            configProgress()
+            selectedRow = viewModel.getCurrentSelectedAnswer()
+            tableView.reloadData()
         }
-        
-        selectedRow = viewModel.getCurrentSelectedAnswer()
-//        categoryLabel.text = viewModel.getCurrentCategoryTitle()
-        tableView.reloadData()
+    }
+    
+    func configProgress() {
+        guard let viewModel = viewModel else { return }
+        let value = CGFloat(viewModel.currentState.rawValue) / CGFloat(State.allCases.endIndex)
+        progressBar.configProgressValue(value: value)
     }
     
 }
@@ -74,16 +83,16 @@ extension QuizViewController: UITableViewDataSource {
                     return
                 }
                 
-                if let previousCell = tableView.cellForRow(at: IndexPath(row: selectedRow, section: indexPath.section)) {
-                    previousCell.textLabel!.font = UIFont.systemFont(ofSize: 15)
-                    previousCell.backgroundColor = UIColor.clear
+                if let previousCell = tableView.cellForRow(at: IndexPath(row: selectedRow, section: indexPath.section)) as? QuestionTableViewCell {
+                    previousCell.questionView.backgroundColor = UIColor(named: "unselectedColor")
+                    previousCell.questionLabel.font = UIFont(name: "SFCompactDisplay-Regular", size: 17)
                 }
             }
             
-            guard let cell = tableView.cellForRow(at: indexPath) else { return }
+            guard let cell = tableView.cellForRow(at: indexPath) as? QuestionTableViewCell else { return }
             UIView.animate(withDuration: 0.5) {
-                cell.backgroundColor = UIColor.systemYellow
-                cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                cell.questionView.backgroundColor = UIColor(named: "selectedColor")
+                cell.questionLabel.font = UIFont(name: "SFCompactDisplay-Medium", size: 16)
             }
             selectedRow = indexPath.row
         default:
@@ -98,7 +107,7 @@ extension QuizViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 3 }
         if section == 0 {
-            return 2
+            return 1
         } else if section == 1 {
             return viewModel.getNumberofQuestions()
         } else {
@@ -111,22 +120,12 @@ extension QuizViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: ProgressBarTableViewCell.identifier, for: indexPath) as? ProgressBarTableViewCell else {
-                    return UITableViewCell()
-                }
-                
-                let value = CGFloat(viewModel.currentState.rawValue) / CGFloat(State.allCases.endIndex + 1)
-                cell.progressBar.configProgressValue(value: value)
-                return cell
-            } else {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as? CategoryTableViewCell else {
-                    return UITableViewCell()
-                }
-                
-                cell.categoryLabel.text = viewModel.getCurrentCategoryTitle()
-                return cell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as? CategoryTableViewCell else {
+                return UITableViewCell()
             }
+            
+            cell.categoryLabel.text = viewModel.getCurrentCategoryTitle()
+            return cell
             
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell.identifier, for: indexPath) as? QuestionTableViewCell else {
@@ -135,11 +134,14 @@ extension QuizViewController: UITableViewDataSource {
             
             if let selectedRow, selectedRow == indexPath.row {
                 cell.questionView.backgroundColor = UIColor(named: "selectedColor")
-                //                cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+                cell.questionLabel.font = UIFont(name: "SFCompactDisplay-Medium", size: 16)
+            } else {
+                cell.questionView.backgroundColor = UIColor(named: "unselectedColor")
+                cell.questionLabel.font = UIFont(name: "SFCompactDisplay-Regular", size: 17)
             }
             
             cell.questionLabel.text = viewModel.getQuestion(for: indexPath.row)
-            cell.questionLabel.numberOfLines = 4
+            cell.questionLabel.numberOfLines = 7
             return cell
             
         case 2:
@@ -155,7 +157,7 @@ extension QuizViewController: UITableViewDataSource {
             
             cell.delegate = self
             return cell
-        
+            
         default:
             return UITableViewCell()
         }

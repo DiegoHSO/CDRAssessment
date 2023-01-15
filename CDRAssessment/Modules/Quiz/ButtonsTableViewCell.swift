@@ -43,6 +43,14 @@ class ButtonsTableViewCell: UITableViewCell {
         nextButton.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         nextButton.imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         nextButton.setTitle(NSLocalizedString("next", comment: ""), for: .normal)
+        
+        nextButton.titleLabel?.layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
+        nextButton.titleLabel?.layer.shadowOpacity = 0.7
+        nextButton.titleLabel?.layer.shadowRadius = 0
+        
+        backButton.titleLabel?.layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
+        backButton.titleLabel?.layer.shadowOpacity = 0.7
+        backButton.titleLabel?.layer.shadowRadius = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

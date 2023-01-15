@@ -25,10 +25,10 @@ enum State: Int, CustomStringConvertible, CaseIterable {
         }
     }
     
-    case memory = 1
-    case orientation = 2
-    case judgment = 3
-    case communityAffairs = 4
-    case homeAndHobbies = 5
-    case personalCare = 6
+    case memory = 0
+    case orientation = 1
+    case judgment = 2
+    case communityAffairs = 3
+    case homeAndHobbies = 4
+    case personalCare = 5
 }

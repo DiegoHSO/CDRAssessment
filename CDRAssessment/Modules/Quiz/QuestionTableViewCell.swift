@@ -17,10 +17,11 @@ class QuestionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         questionView.layer.borderColor = UIColor(named: "borderColor")?.cgColor
-        questionView.layer.borderWidth = 2
+        questionView.layer.borderWidth = 4
+        questionView.layer.cornerRadius = 15
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
