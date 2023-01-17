@@ -107,11 +107,6 @@
                                                                 <constraint firstItem="bwL-Ke-lfG" firstAttribute="centerY" secondItem="Iur-Cc-6oB" secondAttribute="centerY" id="psG-QF-y6r"/>
                                                                 <constraint firstItem="bwL-Ke-lfG" firstAttribute="leading" secondItem="Iur-Cc-6oB" secondAttribute="leading" constant="20" id="v2f-TW-okc"/>
                                                             </constraints>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="view.cornerRadius">
-                                                                    <integer key="value" value="15"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
                                                     <constraints>

@@ -7,7 +7,7 @@
 */
 
 "title" = "Clinical Dementia Rating";
-"subtitle" = "O CDR é uma escala de avaliação global para classificação de pacientes diagnosticados com demência. O CDR avalia aspectos cognitivos, comportamentais e funcionais da Doença de Alzheimer e outras demências. Ao responder às questões a seguir, você receberá uma pontuação na escala CDR com base nas conclusões do estudo.";
+"subtitle" = "O CDR é uma escala de avaliação global para classificação de pacientes diagnosticados com demência. O CDR avalia aspectos cognitivos, comportamentais e funcionais da Doença de Alzheimer e outras demências.\n\nAo responder às questões a seguir, você receberá uma pontuação na escala CDR com base nas conclusões do estudo.";
 "reference" = "Estudo de Referência";
 "developer" = "Desenvolvido por";
 "start" = "Começar";

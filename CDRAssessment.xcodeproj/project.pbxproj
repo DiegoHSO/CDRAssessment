@@ -38,6 +38,7 @@
 		F1BDA66C296731A400972E7B /* ResultsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA66B296731A400972E7B /* ResultsCoordinator.swift */; };
 		F1BDA66E2967D31B00972E7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA66D2967D31B00972E7B /* Extensions.swift */; };
 		F1BDA6702967F73200972E7B /* CDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA66F2967F73200972E7B /* CDR.swift */; };
+		F1CDBF4329772DC5007FA358 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */; };
 		F1FAF3C3297496A70076E03B /* SF-Compact-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C0297496A60076E03B /* SF-Compact-Display-Regular.otf */; };
 		F1FAF3C4297496A70076E03B /* SF-Compact-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C1297496A70076E03B /* SF-Compact-Rounded-Semibold.otf */; };
 		F1FAF3C6297497F60076E03B /* SF-Compact-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C5297497F60076E03B /* SF-Compact-Display-Medium.otf */; };
@@ -80,6 +81,7 @@
 		F1BDA66B296731A400972E7B /* ResultsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCoordinator.swift; sourceTree = "<group>"; };
 		F1BDA66D2967D31B00972E7B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F1BDA66F2967F73200972E7B /* CDR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDR.swift; sourceTree = "<group>"; };
+		F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
 		F1FAF3C0297496A60076E03B /* SF-Compact-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Regular.otf"; sourceTree = "<group>"; };
 		F1FAF3C1297496A70076E03B /* SF-Compact-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		F1FAF3C5297497F60076E03B /* SF-Compact-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				F17ACE2A2965F26C0028E2CD /* MainMenu.storyboard */,
 				F17ACE282965F26C0028E2CD /* MainMenuViewController.swift */,
 				F1BDA6512966170E00972E7B /* MainMenuCoordinator.swift */,
+				F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				F1BDA6652966292700972E7B /* BaseViewController.swift in Sources */,
 				F1BDA6522966170E00972E7B /* MainMenuCoordinator.swift in Sources */,
 				F17ACE252965F26C0028E2CD /* AppDelegate.swift in Sources */,
+				F1CDBF4329772DC5007FA358 /* MainMenuTableViewCell.swift in Sources */,
 				F143D7DA296F26C5005F8658 /* ProgressBarTableViewCell.swift in Sources */,
 				F143D7DE296F27BC005F8658 /* QuestionTableViewCell.swift in Sources */,
 				F143D7DC296F2770005F8658 /* CategoryTableViewCell.swift in Sources */,
