@@ -26,3 +26,4 @@
 "backAlertYes" = "Sim";
 "backAlertNo" = "Não";
 "resultDescription" = "O resultado obtido através da avaliação CDR indica que há chance do paciente possuir nível de demência CATEGORY.";
+"removeAds" = "Remover Anúncios";

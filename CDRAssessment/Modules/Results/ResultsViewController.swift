@@ -38,7 +38,21 @@ class ResultsViewController: UIViewController, Storyboarded {
         scoreCategoryLabel.text = NSLocalizedString(viewModel.getScoreCategory(), comment: "").uppercased()
         scoreDescriptionLabel.text = NSLocalizedString("resultDescription", comment: "")
         scoreDescriptionLabel.text = scoreDescriptionLabel.text?.replacingOccurrences(of: "CATEGORY", with: scoreCategoryLabel.text?.lowercased() ?? "")
+        
+        scoreView.layer.shadowColor = UIColor.black.cgColor
+        scoreView.layer.shadowOffset = CGSize(width: 0, height: 5.0)
+        scoreView.layer.shadowOpacity = 0.5
+        scoreView.layer.shadowRadius = 5.0
+        
+        scoreDescriptionView.layer.shadowColor = UIColor.black.cgColor
+        scoreDescriptionView.layer.shadowOffset = CGSize(width: 0, height: 5.0)
+        scoreDescriptionView.layer.shadowOpacity = 0.1
+        scoreDescriptionView.layer.shadowRadius = 5.0
+        
         homeLabel.text = NSLocalizedString("home", comment: "")
+        homeLabel.layer.shadowOffset = CGSize(width: 0.2, height: 0.5)
+        homeLabel.layer.shadowOpacity = 0.7
+        homeLabel.layer.shadowRadius = 0
         // Do any additional setup after loading the view.
     }
 

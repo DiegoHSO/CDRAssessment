@@ -26,3 +26,4 @@
 "backAlertYes" = "Yes";
 "backAlertNo" = "No";
 "resultDescription" = "The result obtained through the CDR evaluation indicates that there is a chance the patient has CATEGORY level of dementia.";
+"removeAds" = "Remove Ads";

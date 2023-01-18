@@ -22,6 +22,7 @@ class MainMenuTableViewCell: UITableViewCell {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var removeAdsView: UIView!
     @IBOutlet weak var removeAdsButton: UIButton!
+    @IBOutlet weak var removeAdsLabel: UILabel!
     @IBOutlet weak var referenceButton: UIButton!
 
     @IBOutlet weak var externalView: UIView!
@@ -29,25 +30,23 @@ class MainMenuTableViewCell: UITableViewCell {
     
     @IBAction func startAction(_ sender: UIButton) {
         delegate?.didTapStartButton()
-//        coordinator?.goToQuiz()
     }
     
     @IBAction func referenceAction(_ sender: UIButton) {
         delegate?.didTapReferenceButton()
-//        coordinator?.goToReferencePage()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         configureViews()
-        titleLabel.text = NSLocalizedString("title", comment: "")
-        subtitleLabel.text = NSLocalizedString("subtitle", comment: "")
-        referenceButton.setTitle(NSLocalizedString("reference", comment: ""), for: .normal)
-        // Initialization code
     }
     
     private func configureViews() {
+        titleLabel.text = NSLocalizedString("title", comment: "")
+        subtitleLabel.text = NSLocalizedString("subtitle", comment: "")
+        referenceButton.setTitle(NSLocalizedString("reference", comment: ""), for: .normal)
+        removeAdsLabel.text = NSLocalizedString("removeAds", comment: "")
+        
         let border = CAShapeLayer()
         border.strokeColor = UIColor.orange.cgColor
         border.lineDashPattern = [6, 3]
@@ -59,9 +58,9 @@ class MainMenuTableViewCell: UITableViewCell {
         externalView.layer.cornerRadius = externalView.frame.height / 2
         internalView.layer.cornerRadius = internalView.frame.height / 2
         
-        externalView.layer.shadowColor = UIColor.darkGray.cgColor
+        externalView.layer.shadowColor = UIColor.black.cgColor
         externalView.layer.shadowOffset = CGSize(width: 0, height: 5.0)
-        externalView.layer.shadowOpacity = 0.1
+        externalView.layer.shadowOpacity = 0.5
         externalView.layer.shadowRadius = 5.0
         
         startButton.setTitle(NSLocalizedString("start", comment: ""), for: .normal)
@@ -69,6 +68,7 @@ class MainMenuTableViewCell: UITableViewCell {
         startButton.titleLabel?.layer.shadowOpacity = 0.7
         startButton.titleLabel?.layer.shadowRadius = 0
         removeAdsView.layer.cornerRadius = removeAdsView.frame.height / 2
+        removeAdsView.removeFromSuperview()
     }
 
 }

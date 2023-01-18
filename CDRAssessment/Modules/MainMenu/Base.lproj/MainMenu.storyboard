@@ -240,6 +240,7 @@
                                                 <constraint firstItem="VZX-zR-tNE" firstAttribute="top" secondItem="y60-eh-LIi" secondAttribute="bottom" constant="15" id="NWT-gW-y3A"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OVr-1u-x8h" secondAttribute="bottom" constant="30" id="Neb-if-tU1"/>
                                                 <constraint firstAttribute="trailing" secondItem="SiY-8h-1qg" secondAttribute="trailing" constant="20" id="PZe-G8-N8B"/>
+                                                <constraint firstItem="y60-eh-LIi" firstAttribute="top" secondItem="9v0-QM-SWb" secondAttribute="topMargin" priority="750" id="Qnk-cV-nYm"/>
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="OVr-1u-x8h" secondAttribute="trailing" constant="120" id="Zj2-0I-gI4"/>
                                                 <constraint firstItem="OVr-1u-x8h" firstAttribute="top" secondItem="KsR-s1-Nkv" secondAttribute="bottom" constant="30" id="cI4-oS-XtM"/>
                                                 <constraint firstItem="y60-eh-LIi" firstAttribute="centerX" secondItem="9v0-QM-SWb" secondAttribute="centerX" id="cpb-0B-UXC"/>
@@ -256,6 +257,7 @@
                                             <outlet property="internalView" destination="ydW-0Q-PYF" id="byf-kG-ZsU"/>
                                             <outlet property="referenceButton" destination="KsR-s1-Nkv" id="gwS-Eg-OU4"/>
                                             <outlet property="removeAdsButton" destination="TtS-kB-rmW" id="WbJ-8h-DfK"/>
+                                            <outlet property="removeAdsLabel" destination="K44-jh-0FL" id="aGd-y4-Tzy"/>
                                             <outlet property="removeAdsView" destination="SiY-8h-1qg" id="pwL-iM-knN"/>
                                             <outlet property="startButton" destination="OVr-1u-x8h" id="eke-z1-k1a"/>
                                             <outlet property="subtitleLabel" destination="zns-e4-ePN" id="NBd-bA-37E"/>
@@ -306,13 +308,13 @@
         <image name="cart.circle.fill" catalog="system" width="128" height="123"/>
         <image name="mental-health" width="512" height="512"/>
         <namedColor name="bubbleColor">
-            <color red="0.91764705882352937" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9179999828338623" green="0.96100002527236938" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="progressBarBorderColor">
             <color red="0.25900000333786011" green="0.28600001335144043" blue="0.41200000047683716" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="quizBackgroundColor">
-            <color red="0.14901960784313725" green="0.16862745098039217" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14900000393390656" green="0.16899999976158142" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
