@@ -43,7 +43,8 @@ class QuizViewController: BaseViewController, Storyboarded {
             progressBar.configProgressValue(value: 1)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.coordinator?.goToResults(answers: viewModel.getAnswers())
-                viewModel.resetData()
+                viewModel.resetLastAnswer()
+                viewModel.previousCategory()
                 return
             }
         } else {

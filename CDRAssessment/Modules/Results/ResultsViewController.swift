@@ -43,6 +43,20 @@ class ResultsViewController: UIViewController, Storyboarded {
         setupBubbleViews()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        leftCenterBubbleView.isHidden = true
+        leftLowerBubbleView.isHidden = true
+        leftUpperBubbleView.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        leftCenterBubbleView.isHidden = false
+        leftLowerBubbleView.isHidden = false
+        leftUpperBubbleView.isHidden = false
+    }
+    
     private func setupViews() {
         guard let viewModel = viewModel else { return }
         

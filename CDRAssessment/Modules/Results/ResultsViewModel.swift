@@ -96,14 +96,14 @@ public final class ResultsViewModel {
             return value >= 1 ? value : nil
         }
         
-        let secondaryBiggerThanOneSum: Float = secondaryBiggerThanOne.compactMap { $0.value }.reduce(0, +)
+        let secondaryBiggerThanOneSum: Int = secondaryBiggerThanOne.compactMap { $0.value }.count
         
         // MARK: Sum secondary categories with value >= 0.5
         let secondaryBiggerThanPointFive = secondaryCategoriesScore.mapValues { value in
             return value >= 0.5 ? value : nil
         }
         
-        let secondaryBiggerThanPointFiveSum: Float = secondaryBiggerThanPointFive.compactMap { $0.value }.reduce(0, +)
+        let secondaryBiggerThanPointFiveSum: Int = secondaryBiggerThanPointFive.compactMap { $0.value }.count
         
         // MARK: - Assign a diagnosis
         
