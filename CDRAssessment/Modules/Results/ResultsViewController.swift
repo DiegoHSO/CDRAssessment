@@ -9,6 +9,12 @@ import UIKit
 
 class ResultsViewController: UIViewController, Storyboarded {
 
+    @IBOutlet weak var leftUpperBubbleView: UIView!
+    @IBOutlet weak var rightUpperBubbleView: UIView!
+    @IBOutlet weak var leftLowerBubbleView: UIView!
+    @IBOutlet weak var rightLowerBubbleView: UIView!
+    @IBOutlet weak var rightCenterBubbleView: UIView!
+    @IBOutlet weak var leftCenterBubbleView: UIView!
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var scoreTextLabel: UILabel!
     @IBOutlet weak var scoreValueLabel: UILabel!
@@ -33,6 +39,13 @@ class ResultsViewController: UIViewController, Storyboarded {
         guard let viewModel = viewModel else { return }
         viewModel.calculateCDRScale()
         
+        setupViews()
+        setupBubbleViews()
+    }
+    
+    private func setupViews() {
+        guard let viewModel = viewModel else { return }
+        
         scoreTextLabel.text = NSLocalizedString("score", comment: "")
         scoreValueLabel.text = viewModel.getScoreValue()
         scoreCategoryLabel.text = NSLocalizedString(viewModel.getScoreCategory(), comment: "").uppercased()
@@ -53,7 +66,15 @@ class ResultsViewController: UIViewController, Storyboarded {
         homeLabel.layer.shadowOffset = CGSize(width: 0.2, height: 0.5)
         homeLabel.layer.shadowOpacity = 0.7
         homeLabel.layer.shadowRadius = 0
-        // Do any additional setup after loading the view.
+    }
+    
+    private func setupBubbleViews() {
+        leftUpperBubbleView.layer.cornerRadius = leftUpperBubbleView.frame.height / 2
+        rightUpperBubbleView.layer.cornerRadius = rightUpperBubbleView.frame.height / 2
+        leftLowerBubbleView.layer.cornerRadius = leftLowerBubbleView.frame.height / 2
+        rightLowerBubbleView.layer.cornerRadius = rightLowerBubbleView.frame.height / 2
+        leftCenterBubbleView.layer.cornerRadius = leftCenterBubbleView.frame.height / 2
+        rightCenterBubbleView.layer.cornerRadius = rightCenterBubbleView.frame.height / 2
     }
 
 }

@@ -6,7 +6,7 @@
   
 */
 
-"title" = "Clinical Dementia Rating Scale";
+"title" = "Clinical Dementia Rating";
 "subtitle" = "The CDR is a global rating scale for staging patients diagnosed with dementia. The CDR evaluates cognitive, behavioral, and functional aspects of Alzheimer disease and other dementias. \n\nBy answering the following questions, you'll get a CDR score based on the study's conclusions.";
 "reference" = "Reference Study";
 "developer" = "Developed by";
@@ -21,7 +21,7 @@
 "mild" = "mild";
 "moderate" = "moderate";
 "severe" = "severe";
-"backAlertTitle" = "Back to Home";
+"backAlertTitle" = "Go Back";
 "backAlertText" = "Are you sure? All progress made on the quiz will be lost.";
 "backAlertYes" = "Yes";
 "backAlertNo" = "No";

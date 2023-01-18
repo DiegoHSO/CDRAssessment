@@ -29,6 +29,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfd-gF-q1g">
+                                <rect key="frame" x="-40" y="-80" width="200" height="200"/>
+                                <color key="backgroundColor" name="progressBarBorderColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="PS0-6H-6ZA"/>
+                                    <constraint firstAttribute="width" constant="200" id="vRU-j0-yAT"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QJ-pA-1ja">
+                                <rect key="frame" x="283" y="-80" width="150" height="150"/>
+                                <color key="backgroundColor" name="progressBarBorderColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="euw-jZ-9Wk"/>
+                                    <constraint firstAttribute="height" constant="150" id="y1p-wi-sl2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7z-sc-auV">
+                                <rect key="frame" x="296.66666666666669" y="326" width="200" height="200"/>
+                                <color key="backgroundColor" name="progressBarBorderColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ikR-NF-uM3"/>
+                                    <constraint firstAttribute="height" constant="200" id="u4I-W3-UU2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUo-5Q-9lx">
+                                <rect key="frame" x="-78.666666666666671" y="351" width="150.33333333333334" height="150"/>
+                                <color key="backgroundColor" name="progressBarBorderColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="SPB-v5-SxQ"/>
+                                    <constraint firstAttribute="height" constant="150" id="rb1-K8-EKG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEo-BN-nmz">
+                                <rect key="frame" x="323" y="762" width="150" height="150"/>
+                                <color key="backgroundColor" name="progressBarBorderColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Gpc-wt-sWN"/>
+                                    <constraint firstAttribute="height" constant="150" id="vcE-9d-vZH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUE-6d-QyZ">
+                                <rect key="frame" x="-30" y="782" width="150" height="150"/>
+                                <color key="backgroundColor" name="progressBarBorderColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="h9Z-Pz-doZ"/>
+                                    <constraint firstAttribute="height" constant="150" id="j7W-hT-4Bv"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqO-rw-05D">
                                 <rect key="frame" x="40" y="109" width="313" height="254"/>
                                 <subviews>
@@ -144,7 +192,7 @@
                                             <action selector="homeAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KQc-fj-ghU"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HMD-u0-W73">
+                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HMD-u0-W73">
                                         <rect key="frame" x="45.666666666666657" y="25.666666666666629" width="82" height="24"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XdZ-pH-9Wg">
@@ -183,20 +231,38 @@
                         <color key="backgroundColor" name="quizBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="E2L-Xm-Nw8" firstAttribute="top" secondItem="ZqO-rw-05D" secondAttribute="bottom" constant="20" id="0oy-fo-Esh"/>
+                            <constraint firstItem="M7z-sc-auV" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" constant="200" id="1dq-Ld-eyR"/>
+                            <constraint firstItem="zUo-5Q-9lx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" constant="-200" id="1i5-k0-xiU"/>
                             <constraint firstItem="kK4-N3-UpK" firstAttribute="top" secondItem="E2L-Xm-Nw8" secondAttribute="bottom" constant="50" id="3DL-TF-ryc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZqO-rw-05D" secondAttribute="trailing" constant="40" id="3GN-M4-UJr"/>
+                            <constraint firstAttribute="bottom" secondItem="sUE-6d-QyZ" secondAttribute="bottom" constant="-80" id="5uA-hv-uh7"/>
+                            <constraint firstAttribute="trailing" secondItem="oEo-BN-nmz" secondAttribute="trailing" constant="-80" id="6Ag-ll-bOH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kK4-N3-UpK" secondAttribute="bottom" id="7zb-yY-e2C"/>
+                            <constraint firstItem="M7z-sc-auV" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="9Je-SR-LXp"/>
+                            <constraint firstItem="sUE-6d-QyZ" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="-30" id="9mQ-E4-2TU"/>
                             <constraint firstItem="E2L-Xm-Nw8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="FHs-bb-p1v"/>
                             <constraint firstItem="ZqO-rw-05D" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="GeQ-Cn-4dA"/>
+                            <constraint firstItem="sfd-gF-q1g" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="-80" id="WZX-2N-8F5"/>
                             <constraint firstItem="kK4-N3-UpK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="110" id="XGt-hB-nzo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kK4-N3-UpK" secondAttribute="trailing" constant="110" id="c0T-f5-e8a"/>
+                            <constraint firstItem="zUo-5Q-9lx" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="fQ7-m9-9wr"/>
+                            <constraint firstItem="9QJ-pA-1ja" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="-80" id="oSs-oI-pMt"/>
+                            <constraint firstItem="sfd-gF-q1g" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="-40" id="paC-56-wOA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E2L-Xm-Nw8" secondAttribute="trailing" constant="50" id="qAI-rH-QeX"/>
+                            <constraint firstAttribute="bottom" secondItem="oEo-BN-nmz" secondAttribute="bottom" constant="-60" id="si2-tF-rPk"/>
+                            <constraint firstAttribute="trailing" secondItem="9QJ-pA-1ja" secondAttribute="trailing" constant="-40" id="tcB-if-Hck"/>
                             <constraint firstItem="ZqO-rw-05D" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="tsa-B2-815"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="homeLabel" destination="Gvc-83-cXa" id="wor-aS-Spw"/>
                         <outlet property="homeView" destination="kK4-N3-UpK" id="zY7-p7-2WM"/>
+                        <outlet property="leftCenterBubbleView" destination="zUo-5Q-9lx" id="Jfb-xQ-jII"/>
+                        <outlet property="leftLowerBubbleView" destination="sUE-6d-QyZ" id="jeX-3E-Z65"/>
+                        <outlet property="leftUpperBubbleView" destination="sfd-gF-q1g" id="DgZ-ew-wqj"/>
+                        <outlet property="rightCenterBubbleView" destination="M7z-sc-auV" id="hwA-h9-7Sy"/>
+                        <outlet property="rightLowerBubbleView" destination="oEo-BN-nmz" id="1T4-Ho-8yF"/>
+                        <outlet property="rightUpperBubbleView" destination="9QJ-pA-1ja" id="Ef3-Jv-yRs"/>
                         <outlet property="scoreCategoryLabel" destination="uXl-2d-OqZ" id="jzp-C4-3PQ"/>
                         <outlet property="scoreDescriptionLabel" destination="Ynp-NP-nhW" id="XMc-xl-IJz"/>
                         <outlet property="scoreDescriptionView" destination="E2L-Xm-Nw8" id="Qw1-G9-Uw0"/>
@@ -218,6 +284,9 @@
         </namedColor>
         <namedColor name="bubbleColor">
             <color red="0.9179999828338623" green="0.96100002527236938" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="progressBarBorderColor">
+            <color red="0.25900000333786011" green="0.28600001335144043" blue="0.41200000047683716" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="quizBackgroundColor">
             <color red="0.14900000393390656" green="0.16899999976158142" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

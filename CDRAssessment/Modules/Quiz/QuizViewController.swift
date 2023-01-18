@@ -28,6 +28,8 @@ class QuizViewController: BaseViewController, Storyboarded {
         tableView.delegate = self
         tableView.dataSource = self
         configProgress()
+        homeLabel.text = NSLocalizedString("home", comment: "")
+        
         guard let viewModel = viewModel else { return }
         observe(viewModel.$currentState) { [weak self] state in
             guard let self = self else { return }

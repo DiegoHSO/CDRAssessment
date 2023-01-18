@@ -256,7 +256,7 @@
                         <constraints>
                             <constraint firstItem="mmG-E6-0AE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="T4l-La-I3y"/>
                             <constraint firstAttribute="bottom" secondItem="mmG-E6-0AE" secondAttribute="bottom" id="YFn-pT-37s"/>
-                            <constraint firstItem="mmG-E6-0AE" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" id="iwr-Yp-4xo"/>
+                            <constraint firstItem="mmG-E6-0AE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iwr-Yp-4xo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mmG-E6-0AE" secondAttribute="trailing" id="tds-ej-AlJ"/>
                         </constraints>
                     </view>
@@ -277,7 +277,7 @@
         <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <namedColor name="quizBackgroundColor">
-            <color red="0.14901960784313725" green="0.16862745098039217" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.14900000393390656" green="0.16899999976158142" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
