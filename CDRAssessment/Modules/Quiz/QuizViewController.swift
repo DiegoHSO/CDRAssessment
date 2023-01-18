@@ -47,16 +47,22 @@ class QuizViewController: BaseViewController, Storyboarded {
                 return
             }
         } else {
+            scrollToTop()
             configProgress()
             selectedRow = viewModel.getCurrentSelectedAnswer()
             tableView.reloadData()
         }
     }
     
-    func configProgress() {
+    private func configProgress() {
         guard let viewModel = viewModel else { return }
         let value = CGFloat(viewModel.currentState.rawValue) / CGFloat(State.allCases.endIndex)
         progressBar.configProgressValue(value: value)
+    }
+    
+    private func scrollToTop() {
+        let topRow = IndexPath(row: 0, section: 0)
+        tableView.scrollToRow(at: topRow, at: .top, animated: true)
     }
     
 }
