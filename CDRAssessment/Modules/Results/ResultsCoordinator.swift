@@ -20,7 +20,9 @@ class ResultsCoordinator: Coordinator {
     }
     
     override func start() {
-        let viewController = ResultsViewController(coordinator: self, viewModel: viewModel)
+        let viewController = ResultsViewController.instantiate("Results")
+        viewController.viewModel = viewModel
+        viewController.coordinator = self
         rootNavigationController.pushViewController(viewController, animated: true)
     }
 

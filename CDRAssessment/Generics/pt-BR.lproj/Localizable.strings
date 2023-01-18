@@ -16,13 +16,13 @@
 "result" = "Resultado da Avaliação na escala CDR";
 "score" = "Pontuação CDR";
 "home" = "Início";
-"none" = "Nenhum";
-"questionable" = "Questionável";
-"mild" = "Leve";
-"moderate" = "Moderado";
-"severe" = "Grave";
+"none" = "inexistente";
+"questionable" = "muito leve";
+"mild" = "leve";
+"moderate" = "moderado";
+"severe" = "grave";
 "backAlertTitle" = "Voltar ao início";
 "backAlertText" = "Tem certeza que deseja voltar ao início? Todo seu progresso no questionário será perdido.";
 "backAlertYes" = "Sim";
 "backAlertNo" = "Não";
-
+"resultDescription" = "O resultado obtido através da avaliação CDR indica que há chance do paciente possuir nível de demência CATEGORY.";

@@ -21,7 +21,6 @@
 		F17ACE2C2965F26C0028E2CD /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2A2965F26C0028E2CD /* MainMenu.storyboard */; };
 		F17ACE2E2965F26E0028E2CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2D2965F26E0028E2CD /* Assets.xcassets */; };
 		F17ACE312965F26E0028E2CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2F2965F26E0028E2CD /* LaunchScreen.storyboard */; };
-		F1BDA62E2965F4A800972E7B /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */; };
 		F1BDA6352965F5B700972E7B /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6342965F5B700972E7B /* QuizViewModel.swift */; };
 		F1BDA6382965F5E300972E7B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6372965F5E300972E7B /* Category.swift */; };
 		F1BDA63A2965F7D100972E7B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6392965F7D100972E7B /* State.swift */; };
@@ -39,6 +38,7 @@
 		F1BDA66E2967D31B00972E7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA66D2967D31B00972E7B /* Extensions.swift */; };
 		F1BDA6702967F73200972E7B /* CDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA66F2967F73200972E7B /* CDR.swift */; };
 		F1CDBF4329772DC5007FA358 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */; };
+		F1CDBF452977859D007FA358 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CDBF442977859D007FA358 /* Results.storyboard */; };
 		F1FAF3C3297496A70076E03B /* SF-Compact-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C0297496A60076E03B /* SF-Compact-Display-Regular.otf */; };
 		F1FAF3C4297496A70076E03B /* SF-Compact-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C1297496A70076E03B /* SF-Compact-Rounded-Semibold.otf */; };
 		F1FAF3C6297497F60076E03B /* SF-Compact-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C5297497F60076E03B /* SF-Compact-Display-Medium.otf */; };
@@ -62,7 +62,6 @@
 		F17ACE2D2965F26E0028E2CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F17ACE302965F26E0028E2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F17ACE322965F26E0028E2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		F1BDA6342965F5B700972E7B /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		F1BDA6372965F5E300972E7B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F1BDA6392965F7D100972E7B /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		F1BDA66D2967D31B00972E7B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F1BDA66F2967F73200972E7B /* CDR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDR.swift; sourceTree = "<group>"; };
 		F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
+		F1CDBF442977859D007FA358 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
 		F1FAF3C0297496A60076E03B /* SF-Compact-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Regular.otf"; sourceTree = "<group>"; };
 		F1FAF3C1297496A70076E03B /* SF-Compact-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		F1FAF3C5297497F60076E03B /* SF-Compact-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		F1BDA666296634F000972E7B /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */,
+				F1CDBF442977859D007FA358 /* Results.storyboard */,
 				F1BDA6672967318D00972E7B /* ResultsViewModel.swift */,
 				F1BDA6692967319900972E7B /* ResultsViewController.swift */,
 				F1BDA66B296731A400972E7B /* ResultsCoordinator.swift */,
@@ -311,11 +311,11 @@
 				F143D7D4296F0DB6005F8658 /* ProgressBarView.xib in Resources */,
 				F1FAF3C8297498350076E03B /* SF-Compact-Rounded-Bold.otf in Resources */,
 				F1BDA64C2965FCCF00972E7B /* data.json in Resources */,
+				F1CDBF452977859D007FA358 /* Results.storyboard in Resources */,
 				F1FAF3C6297497F60076E03B /* SF-Compact-Display-Medium.otf in Resources */,
 				F17ACE2E2965F26E0028E2CD /* Assets.xcassets in Resources */,
 				F1BDA65B2966196600972E7B /* Localizable.strings in Resources */,
 				F143D7D8296F0ED6005F8658 /* Quiz.storyboard in Resources */,
-				F1BDA62E2965F4A800972E7B /* ResultsViewController.xib in Resources */,
 				F17ACE2C2965F26C0028E2CD /* MainMenu.storyboard in Resources */,
 				F1FAF3C4297496A70076E03B /* SF-Compact-Rounded-Semibold.otf in Resources */,
 			);

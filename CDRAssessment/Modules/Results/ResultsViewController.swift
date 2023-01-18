@@ -7,43 +7,38 @@
 
 import UIKit
 
-class ResultsViewController: UIViewController {
+class ResultsViewController: UIViewController, Storyboarded {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var scoreTextLabel: UILabel!
     @IBOutlet weak var scoreValueLabel: UILabel!
     @IBOutlet weak var scoreCategoryLabel: UILabel!
-    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var scoreDescriptionView: UIView!
+    @IBOutlet weak var scoreDescriptionLabel: UILabel!
+    @IBOutlet weak var homeView: UIView!
+    @IBOutlet weak var homeLabel: UILabel!
     
     @IBAction func homeAction(_ sender: UIButton) {
+        guard let viewModel = viewModel else { return }
         viewModel.resetData()
         coordinator?.finish()
     }
     
     weak var coordinator: ResultsCoordinator?
-    var viewModel: ResultsViewModel
-    
-    init(coordinator: ResultsCoordinator, viewModel: ResultsViewModel) {
-        self.coordinator = coordinator
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var viewModel: ResultsViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let viewModel = viewModel else { return }
         viewModel.calculateCDRScale()
-        titleLabel.text = NSLocalizedString("title", comment: "")
-        subtitleLabel.text = NSLocalizedString("result", comment: "")
+        
         scoreTextLabel.text = NSLocalizedString("score", comment: "")
         scoreValueLabel.text = viewModel.getScoreValue()
-        scoreCategoryLabel.text = NSLocalizedString(viewModel.getScoreCategory(), comment: "")
-        homeButton.setTitle(NSLocalizedString("home", comment: ""), for: .normal)
+        scoreCategoryLabel.text = NSLocalizedString(viewModel.getScoreCategory(), comment: "").uppercased()
+        scoreDescriptionLabel.text = NSLocalizedString("resultDescription", comment: "")
+        scoreDescriptionLabel.text = scoreDescriptionLabel.text?.replacingOccurrences(of: "CATEGORY", with: scoreCategoryLabel.text?.lowercased() ?? "")
+        homeLabel.text = NSLocalizedString("home", comment: "")
         // Do any additional setup after loading the view.
     }
 
