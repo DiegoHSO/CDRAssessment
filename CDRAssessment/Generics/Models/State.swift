@@ -7,11 +7,28 @@
 
 import Foundation
 
-enum State: String, CaseIterable {
-    case memory
-    case orientation
-    case judgment
-    case communityAffairs
-    case homeAndHobbies
-    case personalCare
+enum State: Int, CustomStringConvertible, CaseIterable {
+    var description: String {
+        switch self {
+        case .memory:
+            return "memory"
+        case .orientation:
+            return "orientation"
+        case .judgment:
+            return "judgment"
+        case .communityAffairs:
+            return "communityAffairs"
+        case .homeAndHobbies:
+            return "homeAndHobbies"
+        case .personalCare:
+            return "personalCare"
+        }
+    }
+    
+    case memory = 0
+    case orientation = 1
+    case judgment = 2
+    case communityAffairs = 3
+    case homeAndHobbies = 4
+    case personalCare = 5
 }

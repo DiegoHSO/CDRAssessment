@@ -6,9 +6,9 @@
   
 */
 
-"title" = "Escala Clinical Dementia Rating";
-"subtitle" = "Avaliação através da escala\nClinical Dementia Rating (CDR)";
-"reference" = "Referência";
+"title" = "Clinical Dementia Rating";
+"subtitle" = "O CDR é uma escala de avaliação global para classificação de pacientes diagnosticados com demência. O CDR avalia aspectos cognitivos, comportamentais e funcionais da Doença de Alzheimer e outras demências.\n\nAo responder às questões a seguir, você receberá uma pontuação na escala CDR com base nas conclusões do estudo.";
+"reference" = "Estudo de Referência";
 "developer" = "Desenvolvido por";
 "start" = "Começar";
 "next" = "Próximo";
@@ -16,8 +16,14 @@
 "result" = "Resultado da Avaliação na escala CDR";
 "score" = "Pontuação CDR";
 "home" = "Início";
-"none" = "Nenhum";
-"questionable" = "Questionável";
-"mild" = "Leve";
-"moderate" = "Moderado";
-"severe" = "Grave";
+"none" = "inexistente";
+"questionable" = "muito leve";
+"mild" = "leve";
+"moderate" = "moderado";
+"severe" = "grave";
+"backAlertTitle" = "Voltar ao início";
+"backAlertText" = "Tem certeza que deseja voltar ao início? Todo seu progresso no questionário será perdido.";
+"backAlertYes" = "Sim";
+"backAlertNo" = "Não";
+"resultDescription" = "O resultado obtido através da avaliação CDR indica que há chance do paciente possuir nível de demência CATEGORY.";
+"removeAds" = "Remover Anúncios";

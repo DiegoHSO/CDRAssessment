@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F14EB0642965F4720045E6AB /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14EB0632965F4720045E6AB /* QuizViewController.xib */; };
+		F143D7D4296F0DB6005F8658 /* ProgressBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F143D7D1296F0DB6005F8658 /* ProgressBarView.xib */; };
+		F143D7D5296F0DB6005F8658 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7D2296F0DB6005F8658 /* ProgressBarView.swift */; };
+		F143D7D6296F0DB6005F8658 /* PlainHorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7D3296F0DB6005F8658 /* PlainHorizontalProgressBar.swift */; };
+		F143D7D8296F0ED6005F8658 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F143D7D7296F0ED6005F8658 /* Quiz.storyboard */; };
+		F143D7DA296F26C5005F8658 /* ProgressBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7D9296F26C5005F8658 /* ProgressBarTableViewCell.swift */; };
+		F143D7DC296F2770005F8658 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7DB296F2770005F8658 /* CategoryTableViewCell.swift */; };
+		F143D7DE296F27BC005F8658 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7DD296F27BC005F8658 /* QuestionTableViewCell.swift */; };
+		F143D7E0296F2901005F8658 /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7DF296F2901005F8658 /* ButtonsTableViewCell.swift */; };
 		F17ACE252965F26C0028E2CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE242965F26C0028E2CD /* AppDelegate.swift */; };
 		F17ACE272965F26C0028E2CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE262965F26C0028E2CD /* SceneDelegate.swift */; };
 		F17ACE292965F26C0028E2CD /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17ACE282965F26C0028E2CD /* MainMenuViewController.swift */; };
 		F17ACE2C2965F26C0028E2CD /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2A2965F26C0028E2CD /* MainMenu.storyboard */; };
 		F17ACE2E2965F26E0028E2CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2D2965F26E0028E2CD /* Assets.xcassets */; };
 		F17ACE312965F26E0028E2CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17ACE2F2965F26E0028E2CD /* LaunchScreen.storyboard */; };
-		F1BDA62E2965F4A800972E7B /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */; };
 		F1BDA6352965F5B700972E7B /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6342965F5B700972E7B /* QuizViewModel.swift */; };
 		F1BDA6382965F5E300972E7B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6372965F5E300972E7B /* Category.swift */; };
 		F1BDA63A2965F7D100972E7B /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA6392965F7D100972E7B /* State.swift */; };
@@ -31,10 +37,23 @@
 		F1BDA66C296731A400972E7B /* ResultsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA66B296731A400972E7B /* ResultsCoordinator.swift */; };
 		F1BDA66E2967D31B00972E7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA66D2967D31B00972E7B /* Extensions.swift */; };
 		F1BDA6702967F73200972E7B /* CDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDA66F2967F73200972E7B /* CDR.swift */; };
+		F1CDBF4329772DC5007FA358 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */; };
+		F1CDBF452977859D007FA358 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CDBF442977859D007FA358 /* Results.storyboard */; };
+		F1FAF3C3297496A70076E03B /* SF-Compact-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C0297496A60076E03B /* SF-Compact-Display-Regular.otf */; };
+		F1FAF3C4297496A70076E03B /* SF-Compact-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C1297496A70076E03B /* SF-Compact-Rounded-Semibold.otf */; };
+		F1FAF3C6297497F60076E03B /* SF-Compact-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C5297497F60076E03B /* SF-Compact-Display-Medium.otf */; };
+		F1FAF3C8297498350076E03B /* SF-Compact-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1FAF3C7297498350076E03B /* SF-Compact-Rounded-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F14EB0632965F4720045E6AB /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		F143D7D1296F0DB6005F8658 /* ProgressBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarView.xib; sourceTree = "<group>"; };
+		F143D7D2296F0DB6005F8658 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		F143D7D3296F0DB6005F8658 /* PlainHorizontalProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainHorizontalProgressBar.swift; sourceTree = "<group>"; };
+		F143D7D7296F0ED6005F8658 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		F143D7D9296F26C5005F8658 /* ProgressBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarTableViewCell.swift; sourceTree = "<group>"; };
+		F143D7DB296F2770005F8658 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		F143D7DD296F27BC005F8658 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		F143D7DF296F2901005F8658 /* ButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTableViewCell.swift; sourceTree = "<group>"; };
 		F17ACE212965F26C0028E2CD /* CDRAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDRAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17ACE242965F26C0028E2CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17ACE262965F26C0028E2CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +62,6 @@
 		F17ACE2D2965F26E0028E2CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F17ACE302965F26E0028E2CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F17ACE322965F26E0028E2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
 		F1BDA6342965F5B700972E7B /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		F1BDA6372965F5E300972E7B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F1BDA6392965F7D100972E7B /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -62,6 +80,12 @@
 		F1BDA66B296731A400972E7B /* ResultsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCoordinator.swift; sourceTree = "<group>"; };
 		F1BDA66D2967D31B00972E7B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F1BDA66F2967F73200972E7B /* CDR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDR.swift; sourceTree = "<group>"; };
+		F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
+		F1CDBF442977859D007FA358 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
+		F1FAF3C0297496A60076E03B /* SF-Compact-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Regular.otf"; sourceTree = "<group>"; };
+		F1FAF3C1297496A70076E03B /* SF-Compact-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Semibold.otf"; sourceTree = "<group>"; };
+		F1FAF3C5297497F60076E03B /* SF-Compact-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Medium.otf"; sourceTree = "<group>"; };
+		F1FAF3C7297498350076E03B /* SF-Compact-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +99,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F143D7D0296F0D88005F8658 /* ProgressBarView */ = {
+			isa = PBXGroup;
+			children = (
+				F143D7D3296F0DB6005F8658 /* PlainHorizontalProgressBar.swift */,
+				F143D7D2296F0DB6005F8658 /* ProgressBarView.swift */,
+				F143D7D1296F0DB6005F8658 /* ProgressBarView.xib */,
+			);
+			path = ProgressBarView;
+			sourceTree = "<group>";
+		};
 		F17ACE182965F26C0028E2CD = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +185,7 @@
 				F17ACE2A2965F26C0028E2CD /* MainMenu.storyboard */,
 				F17ACE282965F26C0028E2CD /* MainMenuViewController.swift */,
 				F1BDA6512966170E00972E7B /* MainMenuCoordinator.swift */,
+				F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -158,6 +193,7 @@
 		F1BDA6552966177100972E7B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F1FAF3BE297495C10076E03B /* Fonts */,
 				F17ACE2D2965F26E0028E2CD /* Assets.xcassets */,
 				F1BDA64E2965FCCF00972E7B /* data.json */,
 			);
@@ -176,10 +212,15 @@
 		F1BDA65F29661B2F00972E7B /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				F14EB0632965F4720045E6AB /* QuizViewController.xib */,
+				F143D7D0296F0D88005F8658 /* ProgressBarView */,
+				F143D7D7296F0ED6005F8658 /* Quiz.storyboard */,
 				F1BDA6342965F5B700972E7B /* QuizViewModel.swift */,
 				F1BDA660296620F400972E7B /* QuizViewController.swift */,
 				F1BDA6622966236000972E7B /* QuizCoordinator.swift */,
+				F143D7D9296F26C5005F8658 /* ProgressBarTableViewCell.swift */,
+				F143D7DB296F2770005F8658 /* CategoryTableViewCell.swift */,
+				F143D7DD296F27BC005F8658 /* QuestionTableViewCell.swift */,
+				F143D7DF296F2901005F8658 /* ButtonsTableViewCell.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -187,12 +228,23 @@
 		F1BDA666296634F000972E7B /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				F1BDA62D2965F4A800972E7B /* ResultsViewController.xib */,
+				F1CDBF442977859D007FA358 /* Results.storyboard */,
 				F1BDA6672967318D00972E7B /* ResultsViewModel.swift */,
 				F1BDA6692967319900972E7B /* ResultsViewController.swift */,
 				F1BDA66B296731A400972E7B /* ResultsCoordinator.swift */,
 			);
 			path = Results;
+			sourceTree = "<group>";
+		};
+		F1FAF3BE297495C10076E03B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F1FAF3C0297496A60076E03B /* SF-Compact-Display-Regular.otf */,
+				F1FAF3C5297497F60076E03B /* SF-Compact-Display-Medium.otf */,
+				F1FAF3C1297496A70076E03B /* SF-Compact-Rounded-Semibold.otf */,
+				F1FAF3C7297498350076E03B /* SF-Compact-Rounded-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,13 +306,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1FAF3C3297496A70076E03B /* SF-Compact-Display-Regular.otf in Resources */,
 				F17ACE312965F26E0028E2CD /* LaunchScreen.storyboard in Resources */,
+				F143D7D4296F0DB6005F8658 /* ProgressBarView.xib in Resources */,
+				F1FAF3C8297498350076E03B /* SF-Compact-Rounded-Bold.otf in Resources */,
 				F1BDA64C2965FCCF00972E7B /* data.json in Resources */,
+				F1CDBF452977859D007FA358 /* Results.storyboard in Resources */,
+				F1FAF3C6297497F60076E03B /* SF-Compact-Display-Medium.otf in Resources */,
 				F17ACE2E2965F26E0028E2CD /* Assets.xcassets in Resources */,
 				F1BDA65B2966196600972E7B /* Localizable.strings in Resources */,
-				F1BDA62E2965F4A800972E7B /* ResultsViewController.xib in Resources */,
+				F143D7D8296F0ED6005F8658 /* Quiz.storyboard in Resources */,
 				F17ACE2C2965F26C0028E2CD /* MainMenu.storyboard in Resources */,
-				F14EB0642965F4720045E6AB /* QuizViewController.xib in Resources */,
+				F1FAF3C4297496A70076E03B /* SF-Compact-Rounded-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BDA6542966175500972E7B /* Coordinator.swift in Sources */,
+				F143D7D5296F0DB6005F8658 /* ProgressBarView.swift in Sources */,
+				F143D7E0296F2901005F8658 /* ButtonsTableViewCell.swift in Sources */,
 				F1BDA661296620F400972E7B /* QuizViewController.swift in Sources */,
 				F17ACE292965F26C0028E2CD /* MainMenuViewController.swift in Sources */,
 				F1BDA66A2967319900972E7B /* ResultsViewController.swift in Sources */,
@@ -280,9 +339,14 @@
 				F1BDA6652966292700972E7B /* BaseViewController.swift in Sources */,
 				F1BDA6522966170E00972E7B /* MainMenuCoordinator.swift in Sources */,
 				F17ACE252965F26C0028E2CD /* AppDelegate.swift in Sources */,
+				F1CDBF4329772DC5007FA358 /* MainMenuTableViewCell.swift in Sources */,
+				F143D7DA296F26C5005F8658 /* ProgressBarTableViewCell.swift in Sources */,
+				F143D7DE296F27BC005F8658 /* QuestionTableViewCell.swift in Sources */,
+				F143D7DC296F2770005F8658 /* CategoryTableViewCell.swift in Sources */,
 				F1BDA658296617C100972E7B /* Storyboarded.swift in Sources */,
 				F1BDA66C296731A400972E7B /* ResultsCoordinator.swift in Sources */,
 				F1BDA66E2967D31B00972E7B /* Extensions.swift in Sources */,
+				F143D7D6296F0DB6005F8658 /* PlainHorizontalProgressBar.swift in Sources */,
 				F17ACE272965F26C0028E2CD /* SceneDelegate.swift in Sources */,
 				F1BDA6682967318D00972E7B /* ResultsViewModel.swift in Sources */,
 				F1BDA6702967F73200972E7B /* CDR.swift in Sources */,
@@ -458,14 +522,15 @@
 				DEVELOPMENT_TEAM = TA9GQL43ZA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CDRAssessment/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Dementia Rating Scale";
+				INFOPLIST_KEY_CFBundleDisplayName = CDR;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,14 +558,15 @@
 				DEVELOPMENT_TEAM = TA9GQL43ZA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CDRAssessment/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Dementia Rating Scale";
+				INFOPLIST_KEY_CFBundleDisplayName = CDR;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
