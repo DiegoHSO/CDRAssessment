@@ -22,8 +22,8 @@ public final class QuizViewModel {
         return selectedAnswers
     }
     
-    func resetData() {
-        selectedAnswers = [:]
+    func resetLastAnswer() {
+        selectedAnswers["personalCare"] = nil
     }
     
     func nextCategory(selectedAnswer: Int) {
