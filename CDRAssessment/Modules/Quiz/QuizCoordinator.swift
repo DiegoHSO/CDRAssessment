@@ -25,7 +25,7 @@ class QuizCoordinator: Coordinator {
         viewController.viewModel = viewModel
         rootNavigationController.pushViewController(viewController, animated: true)
     }
-
+    
     override func finish() {
         rootNavigationController.popViewController(animated: true)
     }
@@ -34,5 +34,20 @@ class QuizCoordinator: Coordinator {
         let resultsCoordinator = ResultsCoordinator(rootNavigationController: rootNavigationController, answers: answers)
         addChildCoordinator(resultsCoordinator)
         resultsCoordinator.start()
+    }
+    
+    func showHomeAlert() {
+        let alert = UIAlertController(title: NSLocalizedString("backAlertTitle", comment: ""),
+                                      message: NSLocalizedString("backAlertText", comment: ""),
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("backAlertYes", comment: ""), style: .destructive, handler: { _ in
+            self.finish()
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("backAlertNo", comment: ""), style: .cancel, handler: { _ in
+        }))
+        
+        rootNavigationController.present(alert, animated: true)
     }
 }

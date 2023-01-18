@@ -21,3 +21,7 @@
 "mild" = "Mild";
 "moderate" = "Moderate";
 "severe" = "Severe";
+"backAlertTitle" = "Back to Home";
+"backAlertText" = "Are you sure? All progress made on the quiz will be lost.";
+"backAlertYes" = "Yes";
+"backAlertNo" = "No";

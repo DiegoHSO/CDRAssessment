@@ -21,3 +21,8 @@
 "mild" = "Leve";
 "moderate" = "Moderado";
 "severe" = "Grave";
+"backAlertTitle" = "Voltar ao início";
+"backAlertText" = "Tem certeza que deseja voltar ao início? Todo seu progresso no questionário será perdido.";
+"backAlertYes" = "Sim";
+"backAlertNo" = "Não";
+

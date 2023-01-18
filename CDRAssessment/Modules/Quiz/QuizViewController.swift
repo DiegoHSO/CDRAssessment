@@ -13,8 +13,14 @@ class QuizViewController: BaseViewController, Storyboarded {
     var viewModel: QuizViewModel?
     var selectedRow: Int?
     
+    @IBOutlet weak var homeLabel: UILabel!
+    @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var progressBar: ProgressBarView!
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func homeAction(_ sender: UIButton) {
+        coordinator?.showHomeAlert()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
