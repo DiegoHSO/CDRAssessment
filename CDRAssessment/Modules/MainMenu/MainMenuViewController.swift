@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol MainMenuDisplayLogic: AnyObject
+{
+    func displayFetchedTexts(viewModel: MainMenu.FetchTexts.ViewModel.DisplayedTexts)
+}
+
 class MainMenuViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var leftUpperBubbleView: UIView!
@@ -38,15 +43,31 @@ class MainMenuViewController: UIViewController, Storyboarded {
         coordinator?.removeAllChildCoordinators()
     }
     
+    // MARK: - Fetch orders
+    
+    var displayedTexts: MainMenu.FetchTexts.ViewModel.DisplayedTexts? = nil
+    
+    func fetchTexts()
+    {
+      let request = MainMenu.FetchTexts.Request()
+      interactor?.fetchTexts(request: request)
+    }
+    
+    func displayFetchedTexts(viewModel: MainMenu.FetchTexts.ViewModel)
+    {
+      displayedTexts = viewModel.displayedTexts
+      tableView.reloadData()
+    }
+    
 }
 
 extension MainMenuViewController: MainMenuDelegate {
     func didTapReferenceButton() {
-        coordinator?.goToReferencePage()
+        router?.goToReferencePage()
     }
     
     func didTapStartButton() {
-        coordinator?.goToQuiz()
+        router?.goToQuiz()
     }
     
     func didTapRemoveAdsButton() {
@@ -64,6 +85,10 @@ extension MainMenuViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as? MainMenuTableViewCell else { return UITableViewCell() }
         
         cell.delegate = self
+        cell.titleLabel.text = displayedTexts?.title
+        cell.subtitleLabel.text = displayedTexts?.subtitle
+        cell.referenceButton.titleLabel?.text = displayedTexts?.referenceButtonTitle
+        cell.startButton.titleLabel?.text = displayedTexts?.startButtonTitle
         return cell
     }
 }

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		F11E7EDB298DCA31007417F3 /* CategoriesMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E7EDA298DCA31007417F3 /* CategoriesMemStore.swift */; };
 		F11E7EDD298DCA71007417F3 /* CategoriesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E7EDC298DCA71007417F3 /* CategoriesWorker.swift */; };
+		F11E7EE3298DE604007417F3 /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E7EDE298DE604007417F3 /* MainMenuPresenter.swift */; };
+		F11E7EE4298DE604007417F3 /* MainMenuWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E7EDF298DE604007417F3 /* MainMenuWorker.swift */; };
+		F11E7EE5298DE604007417F3 /* MainMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E7EE0298DE604007417F3 /* MainMenuRouter.swift */; };
+		F11E7EE6298DE604007417F3 /* MainMenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E7EE1298DE604007417F3 /* MainMenuModels.swift */; };
+		F11E7EE7298DE604007417F3 /* MainMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11E7EE2298DE604007417F3 /* MainMenuInteractor.swift */; };
 		F143D7D4296F0DB6005F8658 /* ProgressBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F143D7D1296F0DB6005F8658 /* ProgressBarView.xib */; };
 		F143D7D5296F0DB6005F8658 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7D2296F0DB6005F8658 /* ProgressBarView.swift */; };
 		F143D7D6296F0DB6005F8658 /* PlainHorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143D7D3296F0DB6005F8658 /* PlainHorizontalProgressBar.swift */; };
@@ -50,6 +55,11 @@
 /* Begin PBXFileReference section */
 		F11E7EDA298DCA31007417F3 /* CategoriesMemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesMemStore.swift; sourceTree = "<group>"; };
 		F11E7EDC298DCA71007417F3 /* CategoriesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesWorker.swift; sourceTree = "<group>"; };
+		F11E7EDE298DE604007417F3 /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
+		F11E7EDF298DE604007417F3 /* MainMenuWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuWorker.swift; sourceTree = "<group>"; };
+		F11E7EE0298DE604007417F3 /* MainMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuRouter.swift; sourceTree = "<group>"; };
+		F11E7EE1298DE604007417F3 /* MainMenuModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuModels.swift; sourceTree = "<group>"; };
+		F11E7EE2298DE604007417F3 /* MainMenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuInteractor.swift; sourceTree = "<group>"; };
 		F143D7D1296F0DB6005F8658 /* ProgressBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressBarView.xib; sourceTree = "<group>"; };
 		F143D7D2296F0DB6005F8658 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		F143D7D3296F0DB6005F8658 /* PlainHorizontalProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainHorizontalProgressBar.swift; sourceTree = "<group>"; };
@@ -222,6 +232,11 @@
 			children = (
 				F17ACE2A2965F26C0028E2CD /* MainMenu.storyboard */,
 				F17ACE282965F26C0028E2CD /* MainMenuViewController.swift */,
+				F11E7EDE298DE604007417F3 /* MainMenuPresenter.swift */,
+				F11E7EDF298DE604007417F3 /* MainMenuWorker.swift */,
+				F11E7EE0298DE604007417F3 /* MainMenuRouter.swift */,
+				F11E7EE1298DE604007417F3 /* MainMenuModels.swift */,
+				F11E7EE2298DE604007417F3 /* MainMenuInteractor.swift */,
 				F1BDA6512966170E00972E7B /* MainMenuCoordinator.swift */,
 				F1CDBF4229772DC5007FA358 /* MainMenuTableViewCell.swift */,
 			);
@@ -373,13 +388,17 @@
 				F17ACE292965F26C0028E2CD /* MainMenuViewController.swift in Sources */,
 				F1BDA66A2967319900972E7B /* ResultsViewController.swift in Sources */,
 				F1BDA6382965F5E300972E7B /* Category.swift in Sources */,
+				F11E7EE5298DE604007417F3 /* MainMenuRouter.swift in Sources */,
 				F11E7EDD298DCA71007417F3 /* CategoriesWorker.swift in Sources */,
 				F1BDA6632966236000972E7B /* QuizCoordinator.swift in Sources */,
 				F1BDA6652966292700972E7B /* BaseViewController.swift in Sources */,
 				F1BDA6522966170E00972E7B /* MainMenuCoordinator.swift in Sources */,
+				F11E7EE4298DE604007417F3 /* MainMenuWorker.swift in Sources */,
+				F11E7EE6298DE604007417F3 /* MainMenuModels.swift in Sources */,
 				F17ACE252965F26C0028E2CD /* AppDelegate.swift in Sources */,
 				F1CDBF4329772DC5007FA358 /* MainMenuTableViewCell.swift in Sources */,
 				F143D7DA296F26C5005F8658 /* ProgressBarTableViewCell.swift in Sources */,
+				F11E7EE3298DE604007417F3 /* MainMenuPresenter.swift in Sources */,
 				F143D7DE296F27BC005F8658 /* QuestionTableViewCell.swift in Sources */,
 				F143D7DC296F2770005F8658 /* CategoryTableViewCell.swift in Sources */,
 				F1BDA658296617C100972E7B /* Storyboarded.swift in Sources */,
@@ -387,6 +406,7 @@
 				F1BDA66E2967D31B00972E7B /* Extensions.swift in Sources */,
 				F143D7D6296F0DB6005F8658 /* PlainHorizontalProgressBar.swift in Sources */,
 				F17ACE272965F26C0028E2CD /* SceneDelegate.swift in Sources */,
+				F11E7EE7298DE604007417F3 /* MainMenuInteractor.swift in Sources */,
 				F1BDA6682967318D00972E7B /* ResultsViewModel.swift in Sources */,
 				F11E7EDB298DCA31007417F3 /* CategoriesMemStore.swift in Sources */,
 				F1BDA6702967F73200972E7B /* CDR.swift in Sources */,
