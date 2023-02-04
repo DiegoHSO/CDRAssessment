@@ -14,18 +14,28 @@ import UIKit
 
 protocol MainMenuPresentationLogic
 {
-  func presentSomething(response: MainMenu.Something.Response)
+    func presentTexts(response: MainMenu.FetchTexts.Response)
 }
 
 class MainMenuPresenter: MainMenuPresentationLogic
 {
-  weak var viewController: MainMenuDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: MainMenu.Something.Response)
-  {
-    let viewModel = MainMenu.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: MainMenuDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentTexts(response: MainMenu.FetchTexts.Response)
+    {
+        guard let referenceStudyURL = URL(string: response.texts[4]) else { return }
+        
+        let displayedTexts = MainMenu.FetchTexts.ViewModel.DisplayedTexts(
+            title: response.texts[0],
+            subtitle: response.texts[1],
+            startButtonTitle: response.texts[2],
+            referenceButtonTitle: response.texts[3],
+            referenceStudyURL: referenceStudyURL
+        )
+        
+        let viewModel = MainMenu.FetchTexts.ViewModel(displayedTexts: displayedTexts)
+        viewController?.displayFetchedTexts(viewModel: viewModel)
+    }
 }

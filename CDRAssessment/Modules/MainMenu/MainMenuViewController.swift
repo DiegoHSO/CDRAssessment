@@ -9,10 +9,13 @@ import UIKit
 
 protocol MainMenuDisplayLogic: AnyObject
 {
-    func displayFetchedTexts(viewModel: MainMenu.FetchTexts.ViewModel.DisplayedTexts)
+    func displayFetchedTexts(viewModel: MainMenu.FetchTexts.ViewModel)
 }
 
-class MainMenuViewController: UIViewController, Storyboarded {
+class MainMenuViewController: UIViewController, Storyboarded, MainMenuDisplayLogic {
+    
+    var interactor: MainMenuBusinessLogic?
+    var router: (NSObjectProtocol & MainMenuRoutingLogic & MainMenuDataPassing)?
     
     @IBOutlet weak var leftUpperBubbleView: UIView!
     @IBOutlet weak var rightUpperBubbleView: UIView!
@@ -28,6 +31,19 @@ class MainMenuViewController: UIViewController, Storyboarded {
         tableView.delegate = self
         tableView.dataSource = self
         setupBubbleViews()
+    }
+    
+    private func setup() {
+        let viewController = self
+        let interactor = MainMenuInteractor()
+        let presenter = MainMenuPresenter()
+        let router = MainMenuRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
     }
     
     private func setupBubbleViews() {
@@ -63,11 +79,12 @@ class MainMenuViewController: UIViewController, Storyboarded {
 
 extension MainMenuViewController: MainMenuDelegate {
     func didTapReferenceButton() {
-        router?.goToReferencePage()
+        guard let url = displayedTexts?.referenceStudyURL else { return }
+        router?.routeToReferencePage(url: url)
     }
     
     func didTapStartButton() {
-        router?.goToQuiz()
+        router?.routeToQuiz()
     }
     
     func didTapRemoveAdsButton() {

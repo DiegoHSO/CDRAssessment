@@ -33,9 +33,10 @@ class MainMenuInteractor: MainMenuBusinessLogic, MainMenuDataStore
     
     func fetchTexts(request: MainMenu.FetchTexts.Request) {
         worker = MainMenuWorker()
-        worker?.doSomeWork()
-        
-        let response = MainMenu.FetchTexts.Response()
-        presenter?.presentTexts(response: response)
+        worker?.fetchTexts { (texts) -> Void in
+            self.texts = texts
+            let response = MainMenu.FetchTexts.Response(texts: texts)
+            self.presenter?.presentTexts(response: response)
+          }
     }
 }

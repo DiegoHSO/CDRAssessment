@@ -14,47 +14,42 @@ import UIKit
 
 @objc protocol MainMenuRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToQuiz()
+    func routeToReferencePage(url: URL)
 }
 
 protocol MainMenuDataPassing
 {
-  var dataStore: MainMenuDataStore? { get }
+    var dataStore: MainMenuDataStore? { get }
 }
 
 class MainMenuRouter: NSObject, MainMenuRoutingLogic, MainMenuDataPassing
 {
-  weak var viewController: MainMenuViewController?
-  var dataStore: MainMenuDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: MainMenuViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: MainMenuDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    weak var viewController: MainMenuViewController?
+    var dataStore: MainMenuDataStore?
+    
+    // MARK: Routing
+    
+    func routeToQuiz() {
+        guard let viewController else { return }
+        let destinationVC = QuizViewController.instantiate("Quiz")
+        navigateToQuiz(source: viewController, destination: destinationVC)
+    }
+    
+    func routeToReferencePage(url: URL) {
+        let destination = UIApplication.shared
+        navigateToReferencePage(source: viewController!, destination: destination, url: url)
+    }
+    
+    // MARK: Navigation
+    
+    func navigateToQuiz(source: MainMenuViewController, destination: QuizViewController)
+    {
+      source.show(destination, sender: nil)
+    }
+    
+    func navigateToReferencePage(source: MainMenuViewController, destination: UIApplication, url: URL)
+    {
+        destination.open(url)
+    }
 }

@@ -12,9 +12,14 @@
 
 import UIKit
 
-class MainMenuWorker
-{
-  func doSomeWork()
-  {
-  }
+class MainMenuWorker {
+    func fetchTexts(completionHandler: @escaping ([String]) -> Void) {
+        completionHandler([NSLocalizedString("title", comment: ""),
+                NSLocalizedString("subtitle", comment: ""),
+                NSLocalizedString("start", comment: ""),
+                NSLocalizedString("reference", comment: ""),
+                "https://knightadrc.wustl.edu/professionals-clinicians/cdr-dementia-staging-instrument/cdr-scoring-rules/",
+                NSLocalizedString("removeAds", comment: "")
+        ])
+    }
 }
