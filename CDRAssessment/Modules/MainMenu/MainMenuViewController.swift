@@ -30,6 +30,7 @@ class MainMenuViewController: UIViewController, Storyboarded, MainMenuDisplayLog
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        setup()
         setupBubbleViews()
     }
     
@@ -56,7 +57,8 @@ class MainMenuViewController: UIViewController, Storyboarded, MainMenuDisplayLog
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        coordinator?.removeAllChildCoordinators()
+        super.viewWillAppear(animated)
+        fetchTexts()
     }
     
     // MARK: - Fetch orders
@@ -104,8 +106,8 @@ extension MainMenuViewController: UITableViewDataSource {
         cell.delegate = self
         cell.titleLabel.text = displayedTexts?.title
         cell.subtitleLabel.text = displayedTexts?.subtitle
-        cell.referenceButton.titleLabel?.text = displayedTexts?.referenceButtonTitle
-        cell.startButton.titleLabel?.text = displayedTexts?.startButtonTitle
+        cell.referenceButton.setTitle(displayedTexts?.referenceButtonTitle, for: .normal)
+        cell.startButton.setTitle(displayedTexts?.startButtonTitle, for: .normal)
         return cell
     }
 }

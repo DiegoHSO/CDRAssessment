@@ -42,11 +42,6 @@ class MainMenuTableViewCell: UITableViewCell {
     }
     
     private func configureViews() {
-        titleLabel.text = NSLocalizedString("title", comment: "")
-        subtitleLabel.text = NSLocalizedString("subtitle", comment: "")
-        referenceButton.setTitle(NSLocalizedString("reference", comment: ""), for: .normal)
-        removeAdsLabel.text = NSLocalizedString("removeAds", comment: "")
-        
         let border = CAShapeLayer()
         border.strokeColor = UIColor.orange.cgColor
         border.lineDashPattern = [6, 3]
@@ -63,7 +58,6 @@ class MainMenuTableViewCell: UITableViewCell {
         externalView.layer.shadowOpacity = 0.5
         externalView.layer.shadowRadius = 5.0
         
-        startButton.setTitle(NSLocalizedString("start", comment: ""), for: .normal)
         startButton.titleLabel?.layer.shadowOffset = CGSize(width: 0.2, height: 0.5)
         startButton.titleLabel?.layer.shadowOpacity = 0.7
         startButton.titleLabel?.layer.shadowRadius = 0
