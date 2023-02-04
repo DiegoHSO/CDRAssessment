@@ -141,6 +141,9 @@
 		F11E7ED9298DC876007417F3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F1BDA6502966123D00972E7B /* MainMenu */,
+				F1BDA65F29661B2F00972E7B /* Quiz */,
+				F1BDA666296634F000972E7B /* Results */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -199,9 +202,6 @@
 		F1BDA6302965F50300972E7B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F1BDA6502966123D00972E7B /* MainMenu */,
-				F1BDA65F29661B2F00972E7B /* Quiz */,
-				F1BDA666296634F000972E7B /* Results */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

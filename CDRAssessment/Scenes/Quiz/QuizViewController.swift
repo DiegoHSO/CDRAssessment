@@ -13,12 +13,12 @@ class QuizViewController: BaseViewController, Storyboarded {
     var viewModel: QuizViewModel?
     var selectedRow: Int?
     
-    @IBOutlet weak var homeLabel: UILabel!
-    @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var progressBar: ProgressBarView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var homeLabel: UILabel!
+    @IBOutlet private weak var homeButton: UIButton!
+    @IBOutlet private weak var progressBar: ProgressBarView!
+    @IBOutlet private weak var tableView: UITableView!
     
-    @IBAction func homeAction(_ sender: UIButton) {
+    @IBAction private func homeAction(_ sender: UIButton) {
         coordinator?.showHomeAlert()
     }
     
@@ -37,7 +37,7 @@ class QuizViewController: BaseViewController, Storyboarded {
         }
     }
     
-    func changed(state: State) {
+    private func changed(state: State) {
         guard let viewModel = viewModel else { return }
         if viewModel.shouldGoToResults() {
             progressBar.configProgressValue(value: 1)

@@ -17,13 +17,13 @@ class MainMenuViewController: UIViewController, Storyboarded, MainMenuDisplayLog
     var interactor: MainMenuBusinessLogic?
     var router: (NSObjectProtocol & MainMenuRoutingLogic & MainMenuDataPassing)?
     
-    @IBOutlet weak var leftUpperBubbleView: UIView!
-    @IBOutlet weak var rightUpperBubbleView: UIView!
-    @IBOutlet weak var leftLowerBubbleView: UIView!
-    @IBOutlet weak var rightLowerBubbleView: UIView!
-    @IBOutlet weak var rightCenterBubbleView: UIView!
-    @IBOutlet weak var leftCenterBubbleView: UIView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var leftUpperBubbleView: UIView!
+    @IBOutlet private weak var rightUpperBubbleView: UIView!
+    @IBOutlet private weak var leftLowerBubbleView: UIView!
+    @IBOutlet private weak var rightLowerBubbleView: UIView!
+    @IBOutlet private weak var rightCenterBubbleView: UIView!
+    @IBOutlet private weak var leftCenterBubbleView: UIView!
+    @IBOutlet private weak var tableView: UITableView!
     weak var coordinator: MainMenuCoordinator?
     
     override func viewDidLoad() {
